@@ -1,0 +1,282 @@
+{
+    "author": "Fabian",
+    "description": "",
+    "id": "4dff54814b37",
+    "name": "",
+    "results": {
+        "all": [
+            {
+                "1": {
+                    "Accuracy": 0.9962897135416666,
+                    "Dice": 0.5223367697594502,
+                    "False Discovery Rate": 0.49068322981366463,
+                    "False Negative Rate": 0.4639600894546706,
+                    "False Omission Rate": 0.0017628810588006135,
+                    "False Positive Rate": 0.0019618517213909614,
+                    "Jaccard": 0.35348837209302325,
+                    "Negative Predictive Value": 0.9982371189411994,
+                    "Precision": 0.5093167701863354,
+                    "Recall": 0.5360399105453294,
+                    "Total Positives Reference": 5813,
+                    "Total Positives Test": 6118,
+                    "True Negative Rate": 0.998038148278609
+                },
+                "2": {
+                    "Accuracy": 0.9964817708333333,
+                    "Dice": 0.8940807526460212,
+                    "False Discovery Rate": 0.049151623796222954,
+                    "False Negative Rate": 0.1562904598083823,
+                    "False Omission Rate": 0.0027942881443479652,
+                    "False Positive Rate": 0.0007813292139589034,
+                    "Jaccard": 0.808450304834822,
+                    "Negative Predictive Value": 0.997205711855652,
+                    "Precision": 0.950848376203777,
+                    "Recall": 0.8437095401916177,
+                    "Total Positives Reference": 27033,
+                    "Total Positives Test": 23987,
+                    "True Negative Rate": 0.9992186707860411
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_00.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_00.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.9963626302083334,
+                    "Dice": 0.7366734222557383,
+                    "False Discovery Rate": 0.24638379942140787,
+                    "False Negative Rate": 0.2795242924310869,
+                    "False Omission Rate": 0.001987375707084942,
+                    "False Positive Rate": 0.0016752417626296756,
+                    "Jaccard": 0.583121922101179,
+                    "Negative Predictive Value": 0.998012624292915,
+                    "Precision": 0.7536162005785921,
+                    "Recall": 0.7204757075689131,
+                    "Total Positives Reference": 10847,
+                    "Total Positives Test": 10370,
+                    "True Negative Rate": 0.9983247582373703
+                },
+                "2": {
+                    "Accuracy": 0.9914466145833334,
+                    "Dice": 0.8907769815273598,
+                    "False Discovery Rate": 0.034319910595190906,
+                    "False Negative Rate": 0.1733427971855327,
+                    "False Omission Rate": 0.007587864280301137,
+                    "False Positive Rate": 0.001294188657904649,
+                    "Jaccard": 0.803063916536755,
+                    "Negative Predictive Value": 0.9924121357196989,
+                    "Precision": 0.9656800894048091,
+                    "Recall": 0.8266572028144673,
+                    "Total Positives Reference": 64808,
+                    "Total Positives Test": 55478,
+                    "True Negative Rate": 0.9987058113420954
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_04.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_04.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.997966796875,
+                    "Dice": 0.8111735896970796,
+                    "False Discovery Rate": 0.27584810946482063,
+                    "False Negative Rate": 0.07803319245438611,
+                    "False Omission Rate": 0.00037187157510946143,
+                    "False Positive Rate": 0.001671491768381328,
+                    "Jaccard": 0.6823314006713458,
+                    "Negative Predictive Value": 0.9996281284248906,
+                    "Precision": 0.7241518905351794,
+                    "Recall": 0.9219668075456139,
+                    "Total Positives Reference": 9701,
+                    "Total Positives Test": 12351,
+                    "True Negative Rate": 0.9983285082316187
+                },
+                "2": {
+                    "Accuracy": 0.99737451171875,
+                    "Dice": 0.8829738611878903,
+                    "False Discovery Rate": 0.043972099161089684,
+                    "False Negative Rate": 0.17970803510048927,
+                    "False Omission Rate": 0.0021926383794606424,
+                    "False Positive Rate": 0.0004611344698757236,
+                    "Jaccard": 0.7904683968513756,
+                    "Negative Predictive Value": 0.9978073616205394,
+                    "Precision": 0.9560279008389103,
+                    "Recall": 0.8202919648995107,
+                    "Total Positives Reference": 24729,
+                    "Total Positives Test": 21218,
+                    "True Negative Rate": 0.9995388655301243
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_14.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_14.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.99786572265625,
+                    "Dice": 0.7973668351026841,
+                    "False Discovery Rate": 0.27025880356385235,
+                    "False Negative Rate": 0.12119354179440012,
+                    "False Omission Rate": 0.0005824532281708955,
+                    "False Positive Rate": 0.001562642588069707,
+                    "Jaccard": 0.663017500578213,
+                    "Negative Predictive Value": 0.9994175467718291,
+                    "Precision": 0.7297411964361477,
+                    "Recall": 0.8788064582055999,
+                    "Total Positives Reference": 9786,
+                    "Total Positives Test": 11785,
+                    "True Negative Rate": 0.9984373574119303
+                },
+                "2": {
+                    "Accuracy": 0.99564453125,
+                    "Dice": 0.9194815042154862,
+                    "False Discovery Rate": 0.08863001932574621,
+                    "False Negative Rate": 0.07226128456410075,
+                    "False Omission Rate": 0.001991349901310968,
+                    "False Positive Rate": 0.0024850710099132423,
+                    "Jaccard": 0.850963225342935,
+                    "Negative Predictive Value": 0.998008650098689,
+                    "Precision": 0.9113699806742538,
+                    "Recall": 0.9277387154358993,
+                    "Total Positives Reference": 54898,
+                    "Total Positives Test": 55884,
+                    "True Negative Rate": 0.9975149289900868
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_20.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_20.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.9981815378289474,
+                    "Dice": 0.7387001477104874,
+                    "False Discovery Rate": 0.3673624288425047,
+                    "False Negative Rate": 0.11251109139307902,
+                    "False Omission Rate": 0.0003271928760718276,
+                    "False Positive Rate": 0.0014969342230400917,
+                    "Jaccard": 0.5856657688253893,
+                    "Negative Predictive Value": 0.9996728071239281,
+                    "Precision": 0.6326375711574953,
+                    "Recall": 0.887488908606921,
+                    "Total Positives Reference": 5635,
+                    "Total Positives Test": 7905,
+                    "True Negative Rate": 0.9985030657769599
+                },
+                "2": {
+                    "Accuracy": 0.9964694695723684,
+                    "Dice": 0.9170600949057583,
+                    "False Discovery Rate": 0.06670107400034408,
+                    "False Negative Rate": 0.09862330880607639,
+                    "False Omission Rate": 0.0021812042662360605,
+                    "False Positive Rate": 0.0014258170604212195,
+                    "Jaccard": 0.8468245473195968,
+                    "Negative Predictive Value": 0.997818795733764,
+                    "Precision": 0.9332989259996559,
+                    "Recall": 0.9013766911939236,
+                    "Total Positives Reference": 42130,
+                    "Total Positives Test": 40689,
+                    "True Negative Rate": 0.9985741829395788
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_25.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_25.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.9973642578125,
+                    "Dice": 0.7715035557060617,
+                    "False Discovery Rate": 0.3108220524843076,
+                    "False Negative Rate": 0.12383424670704735,
+                    "False Omission Rate": 0.0006329931977803956,
+                    "False Positive Rate": 0.002017079906301511,
+                    "Jaccard": 0.6280063400179174,
+                    "Negative Predictive Value": 0.9993670068022196,
+                    "Precision": 0.6891779475156924,
+                    "Recall": 0.8761657532929527,
+                    "Total Positives Reference": 10401,
+                    "Total Positives Test": 13223,
+                    "True Negative Rate": 0.9979829200936985
+                },
+                "2": {
+                    "Accuracy": 0.99564208984375,
+                    "Dice": 0.8819116421228119,
+                    "False Discovery Rate": 0.11828668183501767,
+                    "False Negative Rate": 0.11788994468118896,
+                    "False Omission Rate": 0.0022156977259001833,
+                    "False Positive Rate": 0.0022241357782410986,
+                    "Jaccard": 0.7887673956262425,
+                    "Negative Predictive Value": 0.9977843022740999,
+                    "Precision": 0.8817133181649823,
+                    "Recall": 0.882110055318811,
+                    "Total Positives Reference": 37781,
+                    "Total Positives Test": 37798,
+                    "True Negative Rate": 0.9977758642217589
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_31.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_31.nii.gz"
+            },
+            {
+                "1": {
+                    "Accuracy": 0.9974884588068181,
+                    "Dice": 0.6961331901181526,
+                    "False Discovery Rate": 0.16233682305803288,
+                    "False Negative Rate": 0.404484057704677,
+                    "False Omission Rate": 0.0019607467585542144,
+                    "False Positive Rate": 0.0005602348347418795,
+                    "Jaccard": 0.5338990032127853,
+                    "Negative Predictive Value": 0.9980392532414458,
+                    "Precision": 0.8376631769419671,
+                    "Recall": 0.595515942295323,
+                    "Total Positives Reference": 10883,
+                    "Total Positives Test": 7737,
+                    "True Negative Rate": 0.9994397651652581
+                },
+                "2": {
+                    "Accuracy": 0.9965678267045455,
+                    "Dice": 0.9295309965184739,
+                    "False Discovery Rate": 0.10672996076233188,
+                    "False Negative Rate": 0.031139567579891336,
+                    "False Omission Rate": 0.0007464549084761572,
+                    "False Positive Rate": 0.002769336495519026,
+                    "Jaccard": 0.8683399458511417,
+                    "Negative Predictive Value": 0.9992535450915239,
+                    "Precision": 0.8932700392376681,
+                    "Recall": 0.9688604324201087,
+                    "Total Positives Reference": 52634,
+                    "Total Positives Test": 57088,
+                    "True Negative Rate": 0.997230663504481
+                },
+                "reference": "/home/shossainova/nnUNet_preprocessed/Task500_Prostate/gt_segmentations/prostate_42.nii.gz",
+                "test": "/home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/validation_raw_postprocessed/prostate_42.nii.gz"
+            }
+        ],
+        "mean": {
+            "1": {
+                "Accuracy": 0.9973598739613594,
+                "Dice": 0.7248410729070934,
+                "False Discovery Rate": 0.30338503523551286,
+                "False Negative Rate": 0.22622007313419243,
+                "False Omission Rate": 0.0010893592002246212,
+                "False Positive Rate": 0.0015636395435078792,
+                "Jaccard": 0.5756471867856934,
+                "Negative Predictive Value": 0.9989106407997754,
+                "Precision": 0.696614964764487,
+                "Recall": 0.7737799268658075,
+                "Total Positives Reference": 9009.42857142857,
+                "Total Positives Test": 9927.0,
+                "True Negative Rate": 0.9984363604564921
+            },
+            "2": {
+                "Accuracy": 0.9956609735008686,
+                "Dice": 0.9022594047319715,
+                "False Discovery Rate": 0.07254162421084906,
+                "False Negative Rate": 0.11846505681795168,
+                "False Omission Rate": 0.0028156425151475875,
+                "False Positive Rate": 0.0016344303836905519,
+                "Jaccard": 0.822411104623267,
+                "Negative Predictive Value": 0.9971843574848523,
+                "Precision": 0.9274583757891511,
+                "Recall": 0.8815349431820483,
+                "Total Positives Reference": 43430.42857142857,
+                "Total Positives Test": 41734.57142857143,
+                "True Negative Rate": 0.9983655696163094
+            }
+        }
+    },
+    "task": "",
+    "timestamp": "2022-10-29 04:57:27.723784"
+}

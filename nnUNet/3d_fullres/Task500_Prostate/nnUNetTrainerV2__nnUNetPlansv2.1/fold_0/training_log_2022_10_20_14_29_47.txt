@@ -1,0 +1,2512 @@
+Starting... 
+2022-10-20 14:29:47.412649: Using dummy2d data augmentation 
+2022-10-20 14:29:47.523925: Using splits from existing split file: /home/shossainova/nnUNet_preprocessed/Task500_Prostate/splits_final.pkl 
+2022-10-20 14:29:47.524601: The split file contains 5 splits. 
+2022-10-20 14:29:47.524666: Desired fold for training: 0 
+2022-10-20 14:29:47.524715: This split has 25 training and 7 validation cases. 
+2022-10-20 14:29:48.466940: TRAINING KEYS:
+ odict_keys(['prostate_01', 'prostate_02', 'prostate_06', 'prostate_07', 'prostate_10', 'prostate_13', 'prostate_16', 'prostate_17', 'prostate_18', 'prostate_21', 'prostate_24', 'prostate_28', 'prostate_29', 'prostate_32', 'prostate_34', 'prostate_35', 'prostate_37', 'prostate_38', 'prostate_39', 'prostate_40', 'prostate_41', 'prostate_43', 'prostate_44', 'prostate_46', 'prostate_47']) 
+2022-10-20 14:29:48.467075: VALIDATION KEYS:
+ odict_keys(['prostate_00', 'prostate_04', 'prostate_14', 'prostate_20', 'prostate_25', 'prostate_31', 'prostate_42']) 
+2022-10-20 14:29:51.884723: lr: 0.01 
+2022-10-20 14:30:11.665960: Unable to plot network architecture: 
+2022-10-20 14:30:11.666177: _jit_pass_onnx_unpack_quantized_weights(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: torch::jit::Graph, arg1: Dict[str, IValue], arg2: bool) -> Dict[str, IValue]
+
+Invoked with: graph(%input.1 : Float(1, 1, 20, 320, 256, strides=[1638400, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0),
+      %1 : Float(320, 640, 3, 3, 3, strides=[17280, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %2 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %3 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %4 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %5 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %6 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %7 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %8 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %9 : Float(320, 640, 3, 3, 3, strides=[17280, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %10 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %11 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %12 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %13 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %14 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %15 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %16 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %17 : Float(256, 512, 3, 3, 3, strides=[13824, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %18 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %19 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %20 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %21 : Float(256, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %22 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %23 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %24 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %25 : Float(128, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %26 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %27 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %28 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %29 : Float(128, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %30 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %31 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %32 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %33 : Float(64, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %34 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %35 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %36 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %37 : Float(64, 64, 3, 3, 3, strides=[1728, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %38 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %39 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %40 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %41 : Float(32, 64, 1, 3, 3, strides=[576, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %42 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %43 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %44 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %45 : Float(32, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %46 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %47 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %48 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %49 : Float(32, 1, 1, 3, 3, strides=[9, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %50 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %51 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %52 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %53 : Float(32, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %54 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %55 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %56 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %57 : Float(64, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %58 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %59 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %60 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %61 : Float(64, 64, 1, 3, 3, strides=[576, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %62 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %63 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %64 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %65 : Float(128, 64, 3, 3, 3, strides=[1728, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %66 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %67 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %68 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %69 : Float(128, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %70 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %71 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %72 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %73 : Float(256, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %74 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %75 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %76 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %77 : Float(256, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %78 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %79 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %80 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %81 : Float(320, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %82 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %83 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %84 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %85 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %86 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %87 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %88 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %89 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %90 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %91 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %92 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %93 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %94 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %95 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %96 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %97 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %98 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %99 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %100 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %101 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %102 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %103 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %104 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %105 : Float(320, 320, 1, 2, 2, strides=[1280, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %106 : Float(320, 320, 1, 2, 2, strides=[1280, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %107 : Float(320, 256, 2, 2, 2, strides=[2048, 8, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %108 : Float(256, 128, 2, 2, 2, strides=[1024, 8, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %109 : Float(128, 64, 1, 2, 2, strides=[256, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %110 : Float(64, 32, 1, 2, 2, strides=[128, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %111 : Float(3, 320, 1, 1, 1, strides=[320, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %112 : Float(3, 320, 1, 1, 1, strides=[320, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %113 : Float(3, 256, 1, 1, 1, strides=[256, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %114 : Float(3, 128, 1, 1, 1, strides=[128, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %115 : Float(3, 64, 1, 1, 1, strides=[64, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %116 : Float(3, 32, 1, 1, 1, strides=[32, 1, 1, 1, 1], requires_grad=1, device=cuda:0)):
+  %2036 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2037 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2038 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %363 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2039 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %368 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %369 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %370 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %371 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %372 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.3 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.1, %49, %50, %2036, %2037, %2038, %363, %2039, %368, %369, %370, %371, %372) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %395 : NoneType = prim::Constant()
+  %396 : NoneType = prim::Constant()
+  %397 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %398 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %399 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %400 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %402 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.5 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.3, %51, %52, %395, %396, %397, %398, %399, %400) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2188 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.5, %402) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2040 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2041 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2042 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %416 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2043 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %421 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %422 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %423 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %424 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %425 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.9 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2188, %53, %54, %2040, %2041, %2042, %416, %2043, %421, %422, %423, %424, %425) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %448 : NoneType = prim::Constant()
+  %449 : NoneType = prim::Constant()
+  %450 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %451 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %452 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %453 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %455 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.11 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.9, %55, %56, %448, %449, %450, %451, %452, %453) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2189 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.11, %455) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2044 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2045 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2046 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %469 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2047 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %474 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %475 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %476 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %477 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %478 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.15 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2189, %57, %58, %2044, %2045, %2046, %469, %2047, %474, %475, %476, %477, %478) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %501 : NoneType = prim::Constant()
+  %502 : NoneType = prim::Constant()
+  %503 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %504 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %505 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %506 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %508 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.17 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.15, %59, %60, %501, %502, %503, %504, %505, %506) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2190 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.17, %508) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2048 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2049 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2050 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %522 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2051 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %527 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %528 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %529 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %530 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %531 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.21 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2190, %61, %62, %2048, %2049, %2050, %522, %2051, %527, %528, %529, %530, %531) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %554 : NoneType = prim::Constant()
+  %555 : NoneType = prim::Constant()
+  %556 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %557 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %558 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %559 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %561 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.23 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.21, %63, %64, %554, %555, %556, %557, %558, %559) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2191 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.23, %561) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2052 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2053 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2054 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %575 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2055 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %580 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %581 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %582 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %583 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %584 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.27 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2191, %65, %66, %2052, %2053, %2054, %575, %2055, %580, %581, %582, %583, %584) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %607 : NoneType = prim::Constant()
+  %608 : NoneType = prim::Constant()
+  %609 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %610 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %611 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %612 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %614 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.29 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.27, %67, %68, %607, %608, %609, %610, %611, %612) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2192 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.29, %614) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2056 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2057 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2058 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %628 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2059 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %633 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %634 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %635 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %636 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %637 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.33 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2192, %69, %70, %2056, %2057, %2058, %628, %2059, %633, %634, %635, %636, %637) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %660 : NoneType = prim::Constant()
+  %661 : NoneType = prim::Constant()
+  %662 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %663 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %664 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %665 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %667 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.35 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.33, %71, %72, %660, %661, %662, %663, %664, %665) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2193 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.35, %667) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2060 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2061 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2062 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %681 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2063 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %686 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %687 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %688 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %689 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %690 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.39 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2193, %73, %74, %2060, %2061, %2062, %681, %2063, %686, %687, %688, %689, %690) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %713 : NoneType = prim::Constant()
+  %714 : NoneType = prim::Constant()
+  %715 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %716 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %717 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %718 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %720 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.41 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.39, %75, %76, %713, %714, %715, %716, %717, %718) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2194 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.41, %720) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2064 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2065 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2066 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %734 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2067 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %739 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %740 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %741 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %742 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %743 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.45 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2194, %77, %78, %2064, %2065, %2066, %734, %2067, %739, %740, %741, %742, %743) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %766 : NoneType = prim::Constant()
+  %767 : NoneType = prim::Constant()
+  %768 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %769 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %770 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %771 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %773 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.47 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.45, %79, %80, %766, %767, %768, %769, %770, %771) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2195 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.47, %773) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2068 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2069 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2070 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %787 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2071 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %792 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %793 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %794 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %795 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %796 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.51 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2195, %81, %82, %2068, %2069, %2070, %787, %2071, %792, %793, %794, %795, %796) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %819 : NoneType = prim::Constant()
+  %820 : NoneType = prim::Constant()
+  %821 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %822 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %823 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %824 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %826 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.53 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.51, %83, %84, %819, %820, %821, %822, %823, %824) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2196 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.53, %826) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2072 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2073 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2074 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %840 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2075 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %845 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %846 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %847 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %848 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %849 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.57 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2196, %85, %86, %2072, %2073, %2074, %840, %2075, %845, %846, %847, %848, %849) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %872 : NoneType = prim::Constant()
+  %873 : NoneType = prim::Constant()
+  %874 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %875 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %876 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %877 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %879 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.59 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.57, %87, %88, %872, %873, %874, %875, %876, %877) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2197 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.59, %879) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2076 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2077 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2078 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %893 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2079 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %898 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %899 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %900 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %901 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %902 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.63 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2197, %89, %90, %2076, %2077, %2078, %893, %2079, %898, %899, %900, %901, %902) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %925 : NoneType = prim::Constant()
+  %926 : NoneType = prim::Constant()
+  %927 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %928 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %929 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %930 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %932 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.65 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.63, %91, %92, %925, %926, %927, %928, %929, %930) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2198 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.65, %932) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2080 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2081 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2082 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %946 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2083 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %951 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %952 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %953 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %954 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %955 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.69 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2198, %93, %94, %2080, %2081, %2082, %946, %2083, %951, %952, %953, %954, %955) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %978 : NoneType = prim::Constant()
+  %979 : NoneType = prim::Constant()
+  %980 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %981 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %982 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %983 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %985 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.71 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.69, %95, %96, %978, %979, %980, %981, %982, %983) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2199 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.71, %985) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2084 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2085 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2086 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %999 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2087 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1004 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1005 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1006 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1007 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1008 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.75 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2199, %97, %98, %2084, %2085, %2086, %999, %2087, %1004, %1005, %1006, %1007, %1008) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1031 : NoneType = prim::Constant()
+  %1032 : NoneType = prim::Constant()
+  %1033 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1034 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1035 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1036 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1038 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.77 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.75, %99, %100, %1031, %1032, %1033, %1034, %1035, %1036) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2200 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.77, %1038) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2088 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2089 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2090 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1052 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2091 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1057 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1058 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1059 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1060 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1061 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.81 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2200, %101, %102, %2088, %2089, %2090, %1052, %2091, %1057, %1058, %1059, %1060, %1061) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1084 : NoneType = prim::Constant()
+  %1085 : NoneType = prim::Constant()
+  %1086 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1087 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1088 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1089 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1091 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.83 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.81, %103, %104, %1084, %1085, %1086, %1087, %1088, %1089) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2201 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.83, %1091) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1093 : NoneType = prim::Constant()
+  %2092 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2093 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2094 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1106 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2095 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1111 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1112 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1113 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1114 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1115 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1116 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2201, %105, %1093, %2092, %2093, %2094, %1106, %2095, %1111, %1112, %1113, %1114, %1115) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1117 : Tensor[] = prim::ListConstruct(%1116, %2199)
+  %1118 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.85 : Float(1, 640, 5, 10, 8, strides=[256000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::cat(%1117, %1118) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2096 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2097 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2098 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1132 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2099 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1137 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1138 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1139 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1140 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1141 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.87 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.85, %1, %2, %2096, %2097, %2098, %1132, %2099, %1137, %1138, %1139, %1140, %1141) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1164 : NoneType = prim::Constant()
+  %1165 : NoneType = prim::Constant()
+  %1166 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1167 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1168 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1169 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1171 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.89 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.87, %3, %4, %1164, %1165, %1166, %1167, %1168, %1169) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2202 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.89, %1171) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2100 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2101 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2102 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1185 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2103 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1190 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1191 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1192 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1193 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1194 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.93 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2202, %5, %6, %2100, %2101, %2102, %1185, %2103, %1190, %1191, %1192, %1193, %1194) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1217 : NoneType = prim::Constant()
+  %1218 : NoneType = prim::Constant()
+  %1219 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1220 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1221 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1222 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1224 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.95 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.93, %7, %8, %1217, %1218, %1219, %1220, %1221, %1222) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2203 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.95, %1224) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1226 : NoneType = prim::Constant()
+  %2104 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2105 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2106 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1239 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2107 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1244 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1245 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1246 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1247 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1248 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1249 : Float(1, 3, 5, 10, 8, strides=[1200, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2203, %111, %1226, %2104, %2105, %2106, %1239, %2107, %1244, %1245, %1246, %1247, %1248) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1250 : NoneType = prim::Constant()
+  %2108 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2109 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2110 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1263 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2111 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1268 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1269 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1270 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1271 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1272 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1273 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2203, %106, %1250, %2108, %2109, %2110, %1263, %2111, %1268, %1269, %1270, %1271, %1272) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1274 : Tensor[] = prim::ListConstruct(%1273, %2197)
+  %1275 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.99 : Float(1, 640, 5, 20, 16, strides=[1024000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::cat(%1274, %1275) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2112 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2113 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2114 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1289 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2115 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1294 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1295 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1296 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1297 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1298 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.101 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.99, %9, %10, %2112, %2113, %2114, %1289, %2115, %1294, %1295, %1296, %1297, %1298) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1321 : NoneType = prim::Constant()
+  %1322 : NoneType = prim::Constant()
+  %1323 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1324 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1325 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1326 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1328 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.103 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.101, %11, %12, %1321, %1322, %1323, %1324, %1325, %1326) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2204 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.103, %1328) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2116 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2117 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2118 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1342 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2119 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1347 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1348 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1349 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1350 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1351 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.107 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2204, %13, %14, %2116, %2117, %2118, %1342, %2119, %1347, %1348, %1349, %1350, %1351) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1374 : NoneType = prim::Constant()
+  %1375 : NoneType = prim::Constant()
+  %1376 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1377 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1378 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1379 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1381 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.109 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.107, %15, %16, %1374, %1375, %1376, %1377, %1378, %1379) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2205 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.109, %1381) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1383 : NoneType = prim::Constant()
+  %2120 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2121 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2122 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1396 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2123 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1401 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1402 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1403 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1404 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1405 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1406 : Float(1, 3, 5, 20, 16, strides=[4800, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2205, %112, %1383, %2120, %2121, %2122, %1396, %2123, %1401, %1402, %1403, %1404, %1405) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1407 : NoneType = prim::Constant()
+  %2124 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2125 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2126 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1420 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2127 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1425 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1426 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1427 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1428 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1429 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1430 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2205, %107, %1407, %2124, %2125, %2126, %1420, %2127, %1425, %1426, %1427, %1428, %1429) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1431 : Tensor[] = prim::ListConstruct(%1430, %2195)
+  %1432 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.113 : Float(1, 512, 10, 40, 32, strides=[6553600, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::cat(%1431, %1432) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2128 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2129 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2130 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1446 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2131 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1451 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1452 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1453 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1454 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1455 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.115 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.113, %17, %18, %2128, %2129, %2130, %1446, %2131, %1451, %1452, %1453, %1454, %1455) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1478 : NoneType = prim::Constant()
+  %1479 : NoneType = prim::Constant()
+  %1480 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1481 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1482 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1483 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1485 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.117 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.115, %19, %20, %1478, %1479, %1480, %1481, %1482, %1483) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2206 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.117, %1485) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2132 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2133 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2134 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1499 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2135 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1504 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1505 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1506 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1507 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1508 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.121 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2206, %21, %22, %2132, %2133, %2134, %1499, %2135, %1504, %1505, %1506, %1507, %1508) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1531 : NoneType = prim::Constant()
+  %1532 : NoneType = prim::Constant()
+  %1533 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1534 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1535 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1536 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1538 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.123 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.121, %23, %24, %1531, %1532, %1533, %1534, %1535, %1536) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2207 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.123, %1538) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1540 : NoneType = prim::Constant()
+  %2136 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2137 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2138 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1553 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2139 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1558 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1559 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1560 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1561 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1562 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1563 : Float(1, 3, 10, 40, 32, strides=[38400, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2207, %113, %1540, %2136, %2137, %2138, %1553, %2139, %1558, %1559, %1560, %1561, %1562) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1564 : NoneType = prim::Constant()
+  %2140 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2141 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2142 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1577 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2143 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1582 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1583 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1584 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1585 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1586 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1587 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2207, %108, %1564, %2140, %2141, %2142, %1577, %2143, %1582, %1583, %1584, %1585, %1586) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1588 : Tensor[] = prim::ListConstruct(%1587, %2193)
+  %1589 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.127 : Float(1, 256, 20, 80, 64, strides=[26214400, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::cat(%1588, %1589) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2144 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2145 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2146 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1603 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2147 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1608 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1609 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1610 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1611 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1612 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.129 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.127, %25, %26, %2144, %2145, %2146, %1603, %2147, %1608, %1609, %1610, %1611, %1612) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1635 : NoneType = prim::Constant()
+  %1636 : NoneType = prim::Constant()
+  %1637 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1638 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1639 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1640 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1642 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.131 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.129, %27, %28, %1635, %1636, %1637, %1638, %1639, %1640) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2208 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.131, %1642) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2148 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2149 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2150 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1656 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2151 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1661 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1662 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1663 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1664 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1665 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.135 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2208, %29, %30, %2148, %2149, %2150, %1656, %2151, %1661, %1662, %1663, %1664, %1665) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1688 : NoneType = prim::Constant()
+  %1689 : NoneType = prim::Constant()
+  %1690 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1691 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1692 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1693 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1695 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.137 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.135, %31, %32, %1688, %1689, %1690, %1691, %1692, %1693) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2209 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.137, %1695) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1697 : NoneType = prim::Constant()
+  %2152 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2153 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2154 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1710 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2155 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1715 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1716 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1717 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1718 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1719 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1720 : Float(1, 3, 20, 80, 64, strides=[307200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2209, %114, %1697, %2152, %2153, %2154, %1710, %2155, %1715, %1716, %1717, %1718, %1719) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1721 : NoneType = prim::Constant()
+  %2156 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2157 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2158 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1734 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2159 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1739 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1740 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1741 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1742 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1743 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1744 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2209, %109, %1721, %2156, %2157, %2158, %1734, %2159, %1739, %1740, %1741, %1742, %1743) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1745 : Tensor[] = prim::ListConstruct(%1744, %2191)
+  %1746 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.141 : Float(1, 128, 20, 160, 128, strides=[52428800, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::cat(%1745, %1746) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2160 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2161 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2162 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1760 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2163 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1765 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1766 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1767 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1768 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1769 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.143 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.141, %33, %34, %2160, %2161, %2162, %1760, %2163, %1765, %1766, %1767, %1768, %1769) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1792 : NoneType = prim::Constant()
+  %1793 : NoneType = prim::Constant()
+  %1794 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1795 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1796 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1797 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1799 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.145 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.143, %35, %36, %1792, %1793, %1794, %1795, %1796, %1797) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2210 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.145, %1799) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2164 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2165 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2166 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1813 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2167 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1818 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1819 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1820 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1821 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1822 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.149 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2210, %37, %38, %2164, %2165, %2166, %1813, %2167, %1818, %1819, %1820, %1821, %1822) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1845 : NoneType = prim::Constant()
+  %1846 : NoneType = prim::Constant()
+  %1847 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1848 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1849 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1850 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1852 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.151 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.149, %39, %40, %1845, %1846, %1847, %1848, %1849, %1850) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2211 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.151, %1852) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1854 : NoneType = prim::Constant()
+  %2168 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2169 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2170 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1867 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2171 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1872 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1873 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1874 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1875 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1876 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1877 : Float(1, 3, 20, 160, 128, strides=[1228800, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2211, %115, %1854, %2168, %2169, %2170, %1867, %2171, %1872, %1873, %1874, %1875, %1876) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1878 : NoneType = prim::Constant()
+  %2172 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2173 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2174 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1891 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2175 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1896 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1897 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1898 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1899 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1900 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1901 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2211, %110, %1878, %2172, %2173, %2174, %1891, %2175, %1896, %1897, %1898, %1899, %1900) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1902 : Tensor[] = prim::ListConstruct(%1901, %2189)
+  %1903 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.155 : Float(1, 64, 20, 320, 256, strides=[104857600, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::cat(%1902, %1903) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2176 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2177 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2178 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1917 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2179 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1922 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1923 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1924 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1925 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1926 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.157 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.155, %41, %42, %2176, %2177, %2178, %1917, %2179, %1922, %1923, %1924, %1925, %1926) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1949 : NoneType = prim::Constant()
+  %1950 : NoneType = prim::Constant()
+  %1951 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1952 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1953 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1954 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1956 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.159 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.157, %43, %44, %1949, %1950, %1951, %1952, %1953, %1954) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2212 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.159, %1956) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2180 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2181 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2182 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1970 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2183 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1975 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1976 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1977 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1978 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1979 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.163 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2212, %45, %46, %2180, %2181, %2182, %1970, %2183, %1975, %1976, %1977, %1978, %1979) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2002 : NoneType = prim::Constant()
+  %2003 : NoneType = prim::Constant()
+  %2004 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2005 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2006 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2007 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2009 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.165 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.163, %47, %48, %2002, %2003, %2004, %2005, %2006, %2007) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2213 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.165, %2009) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2011 : NoneType = prim::Constant()
+  %2184 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2185 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2186 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2024 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2187 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2029 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2030 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2031 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2032 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2033 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2034 : Float(1, 3, 20, 320, 256, strides=[4915200, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2213, %116, %2011, %2184, %2185, %2186, %2024, %2187, %2029, %2030, %2031, %2032, %2033) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  return (%2034, %1877, %1720, %1563, %1406, %1249)
+, None, False 
+2022-10-20 14:30:11.813940: 
+printing the network instead:
+ 
+2022-10-20 14:30:11.814109: Generic_UNet(
+  (conv_blocks_localization): ModuleList(
+    (0): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (1): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (2): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(512, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (3): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (4): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (5): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(32, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (conv_blocks_context): ModuleList(
+    (0): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(1, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (1): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 64, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 64, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (2): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (3): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (4): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (5): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (6): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (td): ModuleList()
+  (tu): ModuleList(
+    (0): ConvTranspose3d(320, 320, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (1): ConvTranspose3d(320, 320, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (2): ConvTranspose3d(320, 256, kernel_size=(2, 2, 2), stride=(2, 2, 2), bias=False)
+    (3): ConvTranspose3d(256, 128, kernel_size=(2, 2, 2), stride=(2, 2, 2), bias=False)
+    (4): ConvTranspose3d(128, 64, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (5): ConvTranspose3d(64, 32, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+  )
+  (seg_outputs): ModuleList(
+    (0): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (1): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (2): Conv3d(256, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (3): Conv3d(128, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (4): Conv3d(64, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (5): Conv3d(32, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+  )
+) 
+2022-10-20 14:30:11.835035: 
+ 
+2022-10-20 14:30:11.955875: 
+epoch:  0 
+2022-10-20 14:41:33.998237: train loss : -0.0634 
+2022-10-20 14:42:11.066103: validation loss: -0.3528 
+2022-10-20 14:42:11.066601: Average global foreground Dice: [0.0, 0.7897] 
+2022-10-20 14:42:11.066712: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 14:42:11.623373: lr: 0.009991 
+2022-10-20 14:42:11.623578: This epoch took 719.662594 s
+ 
+2022-10-20 14:42:11.623647: 
+epoch:  1 
+2022-10-20 14:52:55.449138: train loss : -0.3155 
+2022-10-20 14:53:32.440514: validation loss: -0.4217 
+2022-10-20 14:53:32.441018: Average global foreground Dice: [0.0055, 0.8323] 
+2022-10-20 14:53:32.441124: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 14:53:32.968358: lr: 0.009982 
+2022-10-20 14:53:33.084149: saving checkpoint... 
+2022-10-20 14:53:33.521451: done, saving took 0.55 seconds 
+2022-10-20 14:53:33.529489: This epoch took 681.905767 s
+ 
+2022-10-20 14:53:33.529587: 
+epoch:  2 
+2022-10-20 15:03:58.413213: train loss : -0.4028 
+2022-10-20 15:04:38.254622: validation loss: -0.5085 
+2022-10-20 15:04:38.255166: Average global foreground Dice: [0.3002, 0.8493] 
+2022-10-20 15:04:38.255267: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 15:04:38.791159: lr: 0.009973 
+2022-10-20 15:04:38.902015: saving checkpoint... 
+2022-10-20 15:04:39.373552: done, saving took 0.58 seconds 
+2022-10-20 15:04:39.382105: This epoch took 665.852459 s
+ 
+2022-10-20 15:04:39.382204: 
+epoch:  3 
+2022-10-20 15:15:42.125997: train loss : -0.5043 
+2022-10-20 15:16:22.206223: validation loss: -0.5627 
+2022-10-20 15:16:22.206768: Average global foreground Dice: [0.5485, 0.8132] 
+2022-10-20 15:16:22.206877: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 15:16:22.739798: lr: 0.009964 
+2022-10-20 15:16:22.850324: saving checkpoint... 
+2022-10-20 15:16:23.318672: done, saving took 0.58 seconds 
+2022-10-20 15:16:23.325529: This epoch took 703.943244 s
+ 
+2022-10-20 15:16:23.325795: 
+epoch:  4 
+2022-10-20 15:27:00.338451: train loss : -0.5757 
+2022-10-20 15:27:37.145191: validation loss: -0.6140 
+2022-10-20 15:27:37.145654: Average global foreground Dice: [0.5889, 0.8405] 
+2022-10-20 15:27:37.145749: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 15:27:37.669917: lr: 0.009955 
+2022-10-20 15:27:37.772053: saving checkpoint... 
+2022-10-20 15:27:38.239176: done, saving took 0.57 seconds 
+2022-10-20 15:27:38.246567: This epoch took 674.920710 s
+ 
+2022-10-20 15:27:38.246676: 
+epoch:  5 
+2022-10-20 15:38:17.172305: train loss : -0.5964 
+2022-10-20 15:38:57.476044: validation loss: -0.6723 
+2022-10-20 15:38:57.476564: Average global foreground Dice: [0.6354, 0.862] 
+2022-10-20 15:38:57.476661: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 15:38:58.011928: lr: 0.009946 
+2022-10-20 15:38:58.114132: saving checkpoint... 
+2022-10-20 15:38:58.574425: done, saving took 0.56 seconds 
+2022-10-20 15:38:58.579663: This epoch took 680.332919 s
+ 
+2022-10-20 15:38:58.579762: 
+epoch:  6 
+2022-10-20 15:49:55.507395: train loss : -0.6172 
+2022-10-20 15:50:32.214250: validation loss: -0.6819 
+2022-10-20 15:50:32.214752: Average global foreground Dice: [0.6631, 0.8598] 
+2022-10-20 15:50:32.214854: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 15:50:32.694922: lr: 0.009937 
+2022-10-20 15:50:32.795962: saving checkpoint... 
+2022-10-20 15:50:33.275802: done, saving took 0.58 seconds 
+2022-10-20 15:50:33.283346: This epoch took 694.703506 s
+ 
+2022-10-20 15:50:33.283447: 
+epoch:  7 
+2022-10-20 16:01:20.332321: train loss : -0.6338 
+2022-10-20 16:02:00.394554: validation loss: -0.6963 
+2022-10-20 16:02:00.395037: Average global foreground Dice: [0.6551, 0.8759] 
+2022-10-20 16:02:00.395139: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:02:00.887570: lr: 0.009928 
+2022-10-20 16:02:00.990572: saving checkpoint... 
+2022-10-20 16:02:01.481565: done, saving took 0.59 seconds 
+2022-10-20 16:02:01.488027: This epoch took 688.204501 s
+ 
+2022-10-20 16:02:01.488385: 
+epoch:  8 
+2022-10-20 16:12:44.767645: train loss : -0.6697 
+2022-10-20 16:13:24.929713: validation loss: -0.6678 
+2022-10-20 16:13:24.930214: Average global foreground Dice: [0.6126, 0.8681] 
+2022-10-20 16:13:24.930319: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:13:25.417513: lr: 0.009919 
+2022-10-20 16:13:25.521137: saving checkpoint... 
+2022-10-20 16:13:26.102388: done, saving took 0.68 seconds 
+2022-10-20 16:13:26.108822: This epoch took 684.620356 s
+ 
+2022-10-20 16:13:26.109164: 
+epoch:  9 
+2022-10-20 16:24:30.194012: train loss : -0.6834 
+2022-10-20 16:25:10.229851: validation loss: -0.6916 
+2022-10-20 16:25:10.230355: Average global foreground Dice: [0.6365, 0.8677] 
+2022-10-20 16:25:10.230464: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:25:10.743520: lr: 0.00991 
+2022-10-20 16:25:10.785016: saving checkpoint... 
+2022-10-20 16:25:11.235158: done, saving took 0.49 seconds 
+2022-10-20 16:25:11.236043: This epoch took 705.126818 s
+ 
+2022-10-20 16:25:11.236129: 
+epoch:  10 
+2022-10-20 16:35:50.157792: train loss : -0.7047 
+2022-10-20 16:36:29.540302: validation loss: -0.7095 
+2022-10-20 16:36:29.540940: Average global foreground Dice: [0.6578, 0.8796] 
+2022-10-20 16:36:29.541072: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:36:30.056648: lr: 0.009901 
+2022-10-20 16:36:30.097983: saving checkpoint... 
+2022-10-20 16:36:30.550169: done, saving took 0.49 seconds 
+2022-10-20 16:36:30.551028: This epoch took 679.314837 s
+ 
+2022-10-20 16:36:30.551117: 
+epoch:  11 
+2022-10-20 16:46:53.147275: train loss : -0.7217 
+2022-10-20 16:47:29.861522: validation loss: -0.7169 
+2022-10-20 16:47:29.862046: Average global foreground Dice: [0.666, 0.889] 
+2022-10-20 16:47:29.862155: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:47:30.376762: lr: 0.009892 
+2022-10-20 16:47:30.418361: saving checkpoint... 
+2022-10-20 16:47:30.879467: done, saving took 0.50 seconds 
+2022-10-20 16:47:30.880373: This epoch took 660.329181 s
+ 
+2022-10-20 16:47:30.880455: 
+epoch:  12 
+2022-10-20 16:57:57.132018: train loss : -0.7196 
+2022-10-20 16:58:37.313490: validation loss: -0.7153 
+2022-10-20 16:58:37.314091: Average global foreground Dice: [0.6739, 0.8765] 
+2022-10-20 16:58:37.314201: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 16:58:37.832463: lr: 0.009883 
+2022-10-20 16:58:37.874048: saving checkpoint... 
+2022-10-20 16:58:38.383910: done, saving took 0.55 seconds 
+2022-10-20 16:58:38.384781: This epoch took 667.504274 s
+ 
+2022-10-20 16:58:38.384863: 
+epoch:  13 
+2022-10-20 17:09:40.151449: train loss : -0.7382 
+2022-10-20 17:10:19.946761: validation loss: -0.7278 
+2022-10-20 17:10:19.947378: Average global foreground Dice: [0.6826, 0.8863] 
+2022-10-20 17:10:19.947480: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 17:10:20.467087: lr: 0.009874 
+2022-10-20 17:10:20.520245: saving checkpoint... 
+2022-10-20 17:10:21.016242: done, saving took 0.55 seconds 
+2022-10-20 17:10:21.017198: This epoch took 702.632263 s
+ 
+2022-10-20 17:10:21.017294: 
+epoch:  14 
+2022-10-20 17:21:08.478044: train loss : -0.7465 
+2022-10-20 17:21:45.624134: validation loss: -0.6903 
+2022-10-20 17:21:45.624604: Average global foreground Dice: [0.6324, 0.8716] 
+2022-10-20 17:21:45.624709: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 17:21:46.149126: lr: 0.009865 
+2022-10-20 17:21:46.214707: saving checkpoint... 
+2022-10-20 17:21:46.710711: done, saving took 0.56 seconds 
+2022-10-20 17:21:46.715744: This epoch took 685.698363 s
+ 
+2022-10-20 17:21:46.715841: 
+epoch:  15 
+2022-10-20 17:32:23.245385: train loss : -0.7551 
+2022-10-20 17:33:03.050436: validation loss: -0.7156 
+2022-10-20 17:33:03.051044: Average global foreground Dice: [0.6686, 0.8845] 
+2022-10-20 17:33:03.051147: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 17:33:03.529498: lr: 0.009856 
+2022-10-20 17:33:03.609481: saving checkpoint... 
+2022-10-20 17:33:04.104464: done, saving took 0.57 seconds 
+2022-10-20 17:33:04.110440: This epoch took 677.394537 s
+ 
+2022-10-20 17:33:04.110541: 
+epoch:  16 
+2022-10-20 17:43:47.796859: train loss : -0.7478 
+2022-10-20 17:44:26.747493: validation loss: -0.6766 
+2022-10-20 17:44:26.747978: Average global foreground Dice: [0.6234, 0.8596] 
+2022-10-20 17:44:26.748163: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 17:44:27.232775: lr: 0.009847 
+2022-10-20 17:44:27.328016: saving checkpoint... 
+2022-10-20 17:44:27.883525: done, saving took 0.65 seconds 
+2022-10-20 17:44:27.889170: This epoch took 683.778554 s
+ 
+2022-10-20 17:44:27.889274: 
+epoch:  17 
+2022-10-20 17:55:10.338265: train loss : -0.7450 
+2022-10-20 17:55:50.111803: validation loss: -0.7045 
+2022-10-20 17:55:50.112251: Average global foreground Dice: [0.6561, 0.8749] 
+2022-10-20 17:55:50.112350: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 17:55:50.635007: lr: 0.009838 
+2022-10-20 17:55:50.676572: saving checkpoint... 
+2022-10-20 17:55:51.140104: done, saving took 0.50 seconds 
+2022-10-20 17:55:51.140970: This epoch took 683.251622 s
+ 
+2022-10-20 17:55:51.141060: 
+epoch:  18 
+2022-10-20 18:06:41.705209: train loss : -0.7631 
+2022-10-20 18:07:18.917884: validation loss: -0.6869 
+2022-10-20 18:07:18.918354: Average global foreground Dice: [0.6242, 0.8702] 
+2022-10-20 18:07:18.918455: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 18:07:19.446022: lr: 0.009829 
+2022-10-20 18:07:19.487754: saving checkpoint... 
+2022-10-20 18:07:19.948162: done, saving took 0.50 seconds 
+2022-10-20 18:07:19.949081: This epoch took 688.807957 s
+ 
+2022-10-20 18:07:19.949166: 
+epoch:  19 
+2022-10-20 18:17:59.149508: train loss : -0.7838 
+2022-10-20 18:18:37.710310: validation loss: -0.7270 
+2022-10-20 18:18:37.710886: Average global foreground Dice: [0.6715, 0.8939] 
+2022-10-20 18:18:37.710986: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 18:18:38.195983: lr: 0.00982 
+2022-10-20 18:18:38.237776: saving checkpoint... 
+2022-10-20 18:18:38.703192: done, saving took 0.51 seconds 
+2022-10-20 18:18:38.704078: This epoch took 678.754836 s
+ 
+2022-10-20 18:18:38.704165: 
+epoch:  20 
+2022-10-20 18:29:20.459334: train loss : -0.7810 
+2022-10-20 18:29:57.510055: validation loss: -0.7212 
+2022-10-20 18:29:57.510523: Average global foreground Dice: [0.6789, 0.8828] 
+2022-10-20 18:29:57.510738: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 18:29:58.040463: lr: 0.009811 
+2022-10-20 18:29:58.081894: saving checkpoint... 
+2022-10-20 18:29:58.567099: done, saving took 0.53 seconds 
+2022-10-20 18:29:58.623247: This epoch took 679.919007 s
+ 
+2022-10-20 18:29:58.623367: 
+epoch:  21 
+2022-10-20 18:40:55.611572: train loss : -0.7787 
+2022-10-20 18:41:34.062442: validation loss: -0.7255 
+2022-10-20 18:41:34.063052: Average global foreground Dice: [0.6946, 0.8805] 
+2022-10-20 18:41:34.063151: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 18:41:34.585131: lr: 0.009802 
+2022-10-20 18:41:34.646380: saving checkpoint... 
+2022-10-20 18:41:35.126228: done, saving took 0.54 seconds 
+2022-10-20 18:41:35.130807: This epoch took 696.507363 s
+ 
+2022-10-20 18:41:35.130907: 
+epoch:  22 
+2022-10-20 18:52:02.873837: train loss : -0.7708 
+2022-10-20 18:52:40.802695: validation loss: -0.7197 
+2022-10-20 18:52:40.803346: Average global foreground Dice: [0.6814, 0.8827] 
+2022-10-20 18:52:40.803468: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 18:52:41.326229: lr: 0.009793 
+2022-10-20 18:52:41.397806: saving checkpoint... 
+2022-10-20 18:52:41.923648: done, saving took 0.60 seconds 
+2022-10-20 18:52:41.928943: This epoch took 666.797977 s
+ 
+2022-10-20 18:52:41.929058: 
+epoch:  23 
+2022-10-20 19:03:20.456075: train loss : -0.7990 
+2022-10-20 19:03:57.144559: validation loss: -0.7051 
+2022-10-20 19:03:57.145197: Average global foreground Dice: [0.6467, 0.885] 
+2022-10-20 19:03:57.145298: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 19:03:57.668311: lr: 0.009784 
+2022-10-20 19:03:57.754161: saving checkpoint... 
+2022-10-20 19:03:58.236612: done, saving took 0.57 seconds 
+2022-10-20 19:03:58.243132: This epoch took 676.314013 s
+ 
+2022-10-20 19:03:58.243229: 
+epoch:  24 
+2022-10-20 19:14:36.153627: train loss : -0.7981 
+2022-10-20 19:15:16.182599: validation loss: -0.7265 
+2022-10-20 19:15:16.183070: Average global foreground Dice: [0.6949, 0.8809] 
+2022-10-20 19:15:16.183166: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 19:15:16.801412: lr: 0.009775 
+2022-10-20 19:15:16.843134: saving checkpoint... 
+2022-10-20 19:15:17.314059: done, saving took 0.51 seconds 
+2022-10-20 19:15:17.314965: This epoch took 679.071670 s
+ 
+2022-10-20 19:15:17.315051: 
+epoch:  25 
+2022-10-20 19:26:19.696503: train loss : -0.8094 
+2022-10-20 19:26:59.550993: validation loss: -0.6996 
+2022-10-20 19:26:59.551478: Average global foreground Dice: [0.6552, 0.8775] 
+2022-10-20 19:26:59.551581: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 19:27:00.074914: lr: 0.009766 
+2022-10-20 19:27:00.116542: saving checkpoint... 
+2022-10-20 19:27:00.568251: done, saving took 0.49 seconds 
+2022-10-20 19:27:00.569167: This epoch took 703.254056 s
+ 
+2022-10-20 19:27:00.569252: 
+epoch:  26 
+2022-10-20 19:38:03.433051: train loss : -0.8045 
+2022-10-20 19:38:43.675695: validation loss: -0.7125 
+2022-10-20 19:38:43.676167: Average global foreground Dice: [0.6675, 0.885] 
+2022-10-20 19:38:43.676267: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 19:38:44.202581: lr: 0.009757 
+2022-10-20 19:38:44.244386: saving checkpoint... 
+2022-10-20 19:38:44.740916: done, saving took 0.54 seconds 
+2022-10-20 19:38:44.741826: This epoch took 704.172501 s
+ 
+2022-10-20 19:38:44.741919: 
+epoch:  27 
+2022-10-20 19:49:24.889662: train loss : -0.8120 
+2022-10-20 19:50:04.259578: validation loss: -0.7388 
+2022-10-20 19:50:04.260148: Average global foreground Dice: [0.7012, 0.8968] 
+2022-10-20 19:50:04.260252: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 19:50:04.738605: lr: 0.009748 
+2022-10-20 19:50:04.780608: saving checkpoint... 
+2022-10-20 19:50:05.256140: done, saving took 0.52 seconds 
+2022-10-20 19:50:05.257012: This epoch took 680.515020 s
+ 
+2022-10-20 19:50:05.257107: 
+epoch:  28 
+2022-10-20 20:01:09.192138: train loss : -0.8005 
+2022-10-20 20:01:49.001112: validation loss: -0.7379 
+2022-10-20 20:01:49.001593: Average global foreground Dice: [0.697, 0.8966] 
+2022-10-20 20:01:49.001693: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:01:49.480572: lr: 0.009739 
+2022-10-20 20:01:49.522449: saving checkpoint... 
+2022-10-20 20:01:50.020298: done, saving took 0.54 seconds 
+2022-10-20 20:01:50.024515: This epoch took 704.767327 s
+ 
+2022-10-20 20:01:50.024612: 
+epoch:  29 
+2022-10-20 20:12:52.820168: train loss : -0.8227 
+2022-10-20 20:13:32.720821: validation loss: -0.7097 
+2022-10-20 20:13:32.721303: Average global foreground Dice: [0.6585, 0.8864] 
+2022-10-20 20:13:32.721532: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:13:33.201795: lr: 0.00973 
+2022-10-20 20:13:33.272745: saving checkpoint... 
+2022-10-20 20:13:33.738161: done, saving took 0.54 seconds 
+2022-10-20 20:13:33.743362: This epoch took 703.718688 s
+ 
+2022-10-20 20:13:33.743467: 
+epoch:  30 
+2022-10-20 20:24:36.016540: train loss : -0.7983 
+2022-10-20 20:25:15.804870: validation loss: -0.7117 
+2022-10-20 20:25:15.805502: Average global foreground Dice: [0.6576, 0.8983] 
+2022-10-20 20:25:15.805605: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:25:16.330895: lr: 0.009721 
+2022-10-20 20:25:16.417461: saving checkpoint... 
+2022-10-20 20:25:16.902583: done, saving took 0.57 seconds 
+2022-10-20 20:25:16.909183: This epoch took 703.165638 s
+ 
+2022-10-20 20:25:16.909276: 
+epoch:  31 
+2022-10-20 20:35:56.625490: train loss : -0.8075 
+2022-10-20 20:36:33.189953: validation loss: -0.7331 
+2022-10-20 20:36:33.190467: Average global foreground Dice: [0.7032, 0.8865] 
+2022-10-20 20:36:33.190577: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:36:33.717186: lr: 0.009712 
+2022-10-20 20:36:33.818762: saving checkpoint... 
+2022-10-20 20:36:34.321583: done, saving took 0.60 seconds 
+2022-10-20 20:36:34.329299: This epoch took 677.419946 s
+ 
+2022-10-20 20:36:34.329408: 
+epoch:  32 
+2022-10-20 20:46:53.307805: train loss : -0.8072 
+2022-10-20 20:47:30.556635: validation loss: -0.7259 
+2022-10-20 20:47:30.557205: Average global foreground Dice: [0.6826, 0.8906] 
+2022-10-20 20:47:30.557312: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:47:31.199386: lr: 0.009703 
+2022-10-20 20:47:31.241244: saving checkpoint... 
+2022-10-20 20:47:31.713583: done, saving took 0.51 seconds 
+2022-10-20 20:47:31.714474: This epoch took 657.384995 s
+ 
+2022-10-20 20:47:31.714557: 
+epoch:  33 
+2022-10-20 20:57:48.439639: train loss : -0.8190 
+2022-10-20 20:58:27.717709: validation loss: -0.7458 
+2022-10-20 20:58:27.718227: Average global foreground Dice: [0.7138, 0.8953] 
+2022-10-20 20:58:27.718335: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 20:58:28.236789: lr: 0.009693 
+2022-10-20 20:58:28.278252: saving checkpoint... 
+2022-10-20 20:58:28.740315: done, saving took 0.50 seconds 
+2022-10-20 20:58:28.741188: This epoch took 657.026559 s
+ 
+2022-10-20 20:58:28.741269: 
+epoch:  34 
+2022-10-20 21:09:17.749610: train loss : -0.8225 
+2022-10-20 21:09:55.059505: validation loss: -0.7314 
+2022-10-20 21:09:55.059976: Average global foreground Dice: [0.6977, 0.8916] 
+2022-10-20 21:09:55.060075: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 21:09:55.538704: lr: 0.009684 
+2022-10-20 21:09:55.580517: saving checkpoint... 
+2022-10-20 21:09:56.024837: done, saving took 0.49 seconds 
+2022-10-20 21:09:56.025735: This epoch took 687.284403 s
+ 
+2022-10-20 21:09:56.025828: 
+epoch:  35 
+2022-10-20 21:20:34.010337: train loss : -0.8331 
+2022-10-20 21:21:13.927565: validation loss: -0.7529 
+2022-10-20 21:21:13.928058: Average global foreground Dice: [0.721, 0.8979] 
+2022-10-20 21:21:13.928160: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 21:21:14.446629: lr: 0.009675 
+2022-10-20 21:21:14.488208: saving checkpoint... 
+2022-10-20 21:21:14.957105: done, saving took 0.51 seconds 
+2022-10-20 21:21:14.958042: This epoch took 678.932137 s
+ 
+2022-10-20 21:21:14.958133: 
+epoch:  36 
+2022-10-20 21:31:58.809843: train loss : -0.8342 
+2022-10-20 21:32:37.571846: validation loss: -0.7259 
+2022-10-20 21:32:37.572415: Average global foreground Dice: [0.6906, 0.894] 
+2022-10-20 21:32:37.572520: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 21:32:38.091504: lr: 0.009666 
+2022-10-20 21:32:38.133184: saving checkpoint... 
+2022-10-20 21:32:38.604746: done, saving took 0.51 seconds 
+2022-10-20 21:32:38.605649: This epoch took 683.647441 s
+ 
+2022-10-20 21:32:38.605733: 
+epoch:  37 
+2022-10-20 21:43:43.941618: train loss : -0.8364 
+2022-10-20 21:44:24.333281: validation loss: -0.7277 
+2022-10-20 21:44:24.333923: Average global foreground Dice: [0.6919, 0.8921] 
+2022-10-20 21:44:24.334029: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 21:44:24.854655: lr: 0.009657 
+2022-10-20 21:44:24.896180: saving checkpoint... 
+2022-10-20 21:44:25.379591: done, saving took 0.52 seconds 
+2022-10-20 21:44:25.384309: This epoch took 706.778518 s
+ 
+2022-10-20 21:44:25.384400: 
+epoch:  38 
+2022-10-20 21:55:27.611683: train loss : -0.8410 
+2022-10-20 21:56:04.734196: validation loss: -0.7291 
+2022-10-20 21:56:04.734699: Average global foreground Dice: [0.6895, 0.8949] 
+2022-10-20 21:56:04.734807: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 21:56:05.257806: lr: 0.009648 
+2022-10-20 21:56:05.328786: saving checkpoint... 
+2022-10-20 21:56:05.816928: done, saving took 0.56 seconds 
+2022-10-20 21:56:05.822215: This epoch took 700.437743 s
+ 
+2022-10-20 21:56:05.822318: 
+epoch:  39 
+2022-10-20 22:06:23.436536: train loss : -0.8351 
+2022-10-20 22:07:00.493037: validation loss: -0.7189 
+2022-10-20 22:07:00.493525: Average global foreground Dice: [0.672, 0.89] 
+2022-10-20 22:07:00.493622: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 22:07:01.019891: lr: 0.009639 
+2022-10-20 22:07:01.108792: saving checkpoint... 
+2022-10-20 22:07:01.603931: done, saving took 0.58 seconds 
+2022-10-20 22:07:01.610491: This epoch took 655.788094 s
+ 
+2022-10-20 22:07:01.610595: 
+epoch:  40 
+2022-10-20 22:17:27.238736: train loss : -0.8462 
+2022-10-20 22:18:04.322248: validation loss: -0.7280 
+2022-10-20 22:18:04.322744: Average global foreground Dice: [0.6896, 0.8934] 
+2022-10-20 22:18:04.322849: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 22:18:04.903841: lr: 0.00963 
+2022-10-20 22:18:04.945695: saving checkpoint... 
+2022-10-20 22:18:05.407320: done, saving took 0.50 seconds 
+2022-10-20 22:18:05.408192: This epoch took 663.797521 s
+ 
+2022-10-20 22:18:05.408273: 
+epoch:  41 
+2022-10-20 22:28:51.064557: train loss : -0.8446 
+2022-10-20 22:29:28.117274: validation loss: -0.7100 
+2022-10-20 22:29:28.117756: Average global foreground Dice: [0.6675, 0.8853] 
+2022-10-20 22:29:28.117864: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 22:29:28.631867: lr: 0.009621 
+2022-10-20 22:29:28.632029: This epoch took 683.223686 s
+ 
+2022-10-20 22:29:28.632082: 
+epoch:  42 
+2022-10-20 22:39:52.059166: train loss : -0.8473 
+2022-10-20 22:40:28.703346: validation loss: -0.7487 
+2022-10-20 22:40:28.703842: Average global foreground Dice: [0.7172, 0.8987] 
+2022-10-20 22:40:28.703947: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 22:40:29.174222: lr: 0.009612 
+2022-10-20 22:40:29.216224: saving checkpoint... 
+2022-10-20 22:40:29.691441: done, saving took 0.52 seconds 
+2022-10-20 22:40:29.692303: This epoch took 661.060169 s
+ 
+2022-10-20 22:40:29.692395: 
+epoch:  43 
+2022-10-20 22:50:59.204880: train loss : -0.8463 
+2022-10-20 22:51:39.137900: validation loss: -0.7212 
+2022-10-20 22:51:39.138382: Average global foreground Dice: [0.6803, 0.8994] 
+2022-10-20 22:51:39.138483: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 22:51:39.610665: lr: 0.009603 
+2022-10-20 22:51:39.652669: saving checkpoint... 
+2022-10-20 22:51:40.121776: done, saving took 0.51 seconds 
+2022-10-20 22:51:40.122637: This epoch took 670.430178 s
+ 
+2022-10-20 22:51:40.122720: 
+epoch:  44 
+2022-10-20 23:02:40.972475: train loss : -0.8447 
+2022-10-20 23:03:20.635062: validation loss: -0.7381 
+2022-10-20 23:03:20.635569: Average global foreground Dice: [0.6934, 0.8976] 
+2022-10-20 23:03:20.635676: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 23:03:21.151962: lr: 0.009594 
+2022-10-20 23:03:21.193393: saving checkpoint... 
+2022-10-20 23:03:21.679228: done, saving took 0.53 seconds 
+2022-10-20 23:03:21.684060: This epoch took 701.561287 s
+ 
+2022-10-20 23:03:21.684158: 
+epoch:  45 
+2022-10-20 23:14:13.820206: train loss : -0.8537 
+2022-10-20 23:14:50.375729: validation loss: -0.7327 
+2022-10-20 23:14:50.376221: Average global foreground Dice: [0.6974, 0.8957] 
+2022-10-20 23:14:50.376450: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 23:14:50.892071: lr: 0.009585 
+2022-10-20 23:14:50.963407: saving checkpoint... 
+2022-10-20 23:14:51.452229: done, saving took 0.56 seconds 
+2022-10-20 23:14:51.458098: This epoch took 689.773879 s
+ 
+2022-10-20 23:14:51.458206: 
+epoch:  46 
+2022-10-20 23:25:18.214239: train loss : -0.8466 
+2022-10-20 23:25:56.682851: validation loss: -0.7311 
+2022-10-20 23:25:56.683343: Average global foreground Dice: [0.6852, 0.8936] 
+2022-10-20 23:25:56.683450: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 23:25:57.199839: lr: 0.009576 
+2022-10-20 23:25:57.287193: saving checkpoint... 
+2022-10-20 23:25:57.789080: done, saving took 0.59 seconds 
+2022-10-20 23:25:57.795723: This epoch took 666.337456 s
+ 
+2022-10-20 23:25:57.795817: 
+epoch:  47 
+2022-10-20 23:36:27.599393: train loss : -0.8598 
+2022-10-20 23:37:07.393293: validation loss: -0.7385 
+2022-10-20 23:37:07.393798: Average global foreground Dice: [0.7026, 0.8972] 
+2022-10-20 23:37:07.393900: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 23:37:07.878084: lr: 0.009567 
+2022-10-20 23:37:07.969812: saving checkpoint... 
+2022-10-20 23:37:08.447789: done, saving took 0.57 seconds 
+2022-10-20 23:37:08.454753: This epoch took 670.658882 s
+ 
+2022-10-20 23:37:08.454854: 
+epoch:  48 
+2022-10-20 23:48:11.854947: train loss : -0.8519 
+2022-10-20 23:48:51.779610: validation loss: -0.7132 
+2022-10-20 23:48:51.780099: Average global foreground Dice: [0.6608, 0.8914] 
+2022-10-20 23:48:51.780202: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-20 23:48:52.267355: lr: 0.009558 
+2022-10-20 23:48:52.267519: This epoch took 703.812608 s
+ 
+2022-10-20 23:48:52.267581: 
+epoch:  49 
+2022-10-20 23:59:35.986716: train loss : -0.8520 
+2022-10-21 00:00:15.635728: validation loss: -0.7338 
+2022-10-21 00:00:15.636243: Average global foreground Dice: [0.7024, 0.8937] 
+2022-10-21 00:00:15.636351: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:00:16.121211: lr: 0.009549 
+2022-10-21 00:00:16.121366: saving scheduled checkpoint file... 
+2022-10-21 00:00:16.216087: saving checkpoint... 
+2022-10-21 00:00:16.758651: done, saving took 0.64 seconds 
+2022-10-21 00:00:16.762727: done 
+2022-10-21 00:00:16.804338: saving checkpoint... 
+2022-10-21 00:00:18.409767: done, saving took 1.65 seconds 
+2022-10-21 00:00:18.410630: This epoch took 686.142990 s
+ 
+2022-10-21 00:00:18.410717: 
+epoch:  50 
+2022-10-21 00:10:49.550735: train loss : -0.8640 
+2022-10-21 00:11:26.616160: validation loss: -0.7235 
+2022-10-21 00:11:26.616631: Average global foreground Dice: [0.6899, 0.8899] 
+2022-10-21 00:11:26.616732: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:11:27.136977: lr: 0.00954 
+2022-10-21 00:11:27.178629: saving checkpoint... 
+2022-10-21 00:11:27.676475: done, saving took 0.54 seconds 
+2022-10-21 00:11:27.677381: This epoch took 669.266599 s
+ 
+2022-10-21 00:11:27.677467: 
+epoch:  51 
+2022-10-21 00:21:54.708162: train loss : -0.8572 
+2022-10-21 00:22:33.197643: validation loss: -0.7573 
+2022-10-21 00:22:33.198139: Average global foreground Dice: [0.7204, 0.9002] 
+2022-10-21 00:22:33.198242: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:22:33.677925: lr: 0.009531 
+2022-10-21 00:22:33.719880: saving checkpoint... 
+2022-10-21 00:22:34.204359: done, saving took 0.53 seconds 
+2022-10-21 00:22:34.205240: This epoch took 666.527711 s
+ 
+2022-10-21 00:22:34.205338: 
+epoch:  52 
+2022-10-21 00:33:07.557224: train loss : -0.8624 
+2022-10-21 00:33:47.590151: validation loss: -0.7341 
+2022-10-21 00:33:47.590762: Average global foreground Dice: [0.6917, 0.8986] 
+2022-10-21 00:33:47.590871: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:33:48.112353: lr: 0.009522 
+2022-10-21 00:33:48.154622: saving checkpoint... 
+2022-10-21 00:33:48.622678: done, saving took 0.51 seconds 
+2022-10-21 00:33:48.623554: This epoch took 674.418157 s
+ 
+2022-10-21 00:33:48.623634: 
+epoch:  53 
+2022-10-21 00:44:53.201363: train loss : -0.8622 
+2022-10-21 00:45:33.217346: validation loss: -0.7497 
+2022-10-21 00:45:33.217918: Average global foreground Dice: [0.7097, 0.9029] 
+2022-10-21 00:45:33.218021: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:45:33.740539: lr: 0.009513 
+2022-10-21 00:45:33.781879: saving checkpoint... 
+2022-10-21 00:45:34.266738: done, saving took 0.53 seconds 
+2022-10-21 00:45:34.267589: This epoch took 705.643883 s
+ 
+2022-10-21 00:45:34.267675: 
+epoch:  54 
+2022-10-21 00:56:08.796728: train loss : -0.8492 
+2022-10-21 00:56:45.758033: validation loss: -0.7215 
+2022-10-21 00:56:45.758589: Average global foreground Dice: [0.6821, 0.8919] 
+2022-10-21 00:56:45.758691: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 00:56:46.278395: lr: 0.009504 
+2022-10-21 00:56:46.278558: This epoch took 672.010814 s
+ 
+2022-10-21 00:56:46.278636: 
+epoch:  55 
+2022-10-21 01:07:13.407430: train loss : -0.8520 
+2022-10-21 01:07:53.237151: validation loss: -0.7356 
+2022-10-21 01:07:53.237770: Average global foreground Dice: [0.6981, 0.8967] 
+2022-10-21 01:07:53.237874: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 01:07:53.760316: lr: 0.009495 
+2022-10-21 01:07:53.801817: saving checkpoint... 
+2022-10-21 01:07:54.251366: done, saving took 0.49 seconds 
+2022-10-21 01:07:54.252232: This epoch took 667.973525 s
+ 
+2022-10-21 01:07:54.252313: 
+epoch:  56 
+2022-10-21 01:18:56.020995: train loss : -0.8589 
+2022-10-21 01:19:36.276515: validation loss: -0.7298 
+2022-10-21 01:19:36.277032: Average global foreground Dice: [0.6973, 0.8959] 
+2022-10-21 01:19:36.277139: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 01:19:36.798788: lr: 0.009486 
+2022-10-21 01:19:36.840489: saving checkpoint... 
+2022-10-21 01:19:37.312196: done, saving took 0.51 seconds 
+2022-10-21 01:19:37.368656: This epoch took 703.116270 s
+ 
+2022-10-21 01:19:37.368765: 
+epoch:  57 
+2022-10-21 01:30:10.094663: train loss : -0.8776 
+2022-10-21 01:30:46.888210: validation loss: -0.7275 
+2022-10-21 01:30:46.888785: Average global foreground Dice: [0.681, 0.9011] 
+2022-10-21 01:30:46.888886: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 01:30:47.367408: lr: 0.009476 
+2022-10-21 01:30:47.367667: This epoch took 669.998833 s
+ 
+2022-10-21 01:30:47.367749: 
+epoch:  58 
+2022-10-21 01:41:25.972394: train loss : -0.8736 
+2022-10-21 01:42:03.152923: validation loss: -0.7104 
+2022-10-21 01:42:03.153438: Average global foreground Dice: [0.678, 0.8911] 
+2022-10-21 01:42:03.153542: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 01:42:03.675385: lr: 0.009467 
+2022-10-21 01:42:03.675548: This epoch took 676.307721 s
+ 
+2022-10-21 01:42:03.675627: 
+epoch:  59 
+2022-10-21 01:52:36.543571: train loss : -0.8675 
+2022-10-21 01:53:16.090503: validation loss: -0.7176 
+2022-10-21 01:53:16.090991: Average global foreground Dice: [0.6858, 0.8858] 
+2022-10-21 01:53:16.091096: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 01:53:16.619005: lr: 0.009458 
+2022-10-21 01:53:16.619172: This epoch took 672.943472 s
+ 
+2022-10-21 01:53:16.619249: 
+epoch:  60 
+2022-10-21 02:03:58.605975: train loss : -0.8808 
+2022-10-21 02:04:38.671739: validation loss: -0.7305 
+2022-10-21 02:04:38.672227: Average global foreground Dice: [0.7007, 0.897] 
+2022-10-21 02:04:38.672331: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 02:04:39.151276: lr: 0.009449 
+2022-10-21 02:04:39.151448: This epoch took 682.532127 s
+ 
+2022-10-21 02:04:39.151509: 
+epoch:  61 
+2022-10-21 02:15:22.154718: train loss : -0.8721 
+2022-10-21 02:16:01.855461: validation loss: -0.7190 
+2022-10-21 02:16:01.855939: Average global foreground Dice: [0.6732, 0.8986] 
+2022-10-21 02:16:01.856041: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 02:16:02.378266: lr: 0.00944 
+2022-10-21 02:16:02.378439: This epoch took 683.226867 s
+ 
+2022-10-21 02:16:02.378498: 
+epoch:  62 
+2022-10-21 02:26:43.017313: train loss : -0.8734 
+2022-10-21 02:27:22.588991: validation loss: -0.7367 
+2022-10-21 02:27:22.589453: Average global foreground Dice: [0.7043, 0.8978] 
+2022-10-21 02:27:22.589551: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 02:27:23.113184: lr: 0.009431 
+2022-10-21 02:27:23.113355: This epoch took 680.734802 s
+ 
+2022-10-21 02:27:23.113421: 
+epoch:  63 
+2022-10-21 02:38:20.356464: train loss : -0.8751 
+2022-10-21 02:38:59.938164: validation loss: -0.7314 
+2022-10-21 02:38:59.938800: Average global foreground Dice: [0.6962, 0.899] 
+2022-10-21 02:38:59.938900: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 02:39:00.460892: lr: 0.009422 
+2022-10-21 02:39:00.502272: saving checkpoint... 
+2022-10-21 02:39:00.998042: done, saving took 0.54 seconds 
+2022-10-21 02:39:01.002999: This epoch took 697.889519 s
+ 
+2022-10-21 02:39:01.003099: 
+epoch:  64 
+2022-10-21 02:49:37.657435: train loss : -0.8770 
+2022-10-21 02:50:15.725225: validation loss: -0.7349 
+2022-10-21 02:50:15.725805: Average global foreground Dice: [0.6984, 0.8973] 
+2022-10-21 02:50:15.725904: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 02:50:16.205046: lr: 0.009413 
+2022-10-21 02:50:16.276763: saving checkpoint... 
+2022-10-21 02:50:16.767881: done, saving took 0.56 seconds 
+2022-10-21 02:50:16.773694: This epoch took 675.770519 s
+ 
+2022-10-21 02:50:16.773793: 
+epoch:  65 
+2022-10-21 03:01:14.466526: train loss : -0.8762 
+2022-10-21 03:01:54.009700: validation loss: -0.7242 
+2022-10-21 03:01:54.010237: Average global foreground Dice: [0.6894, 0.8952] 
+2022-10-21 03:01:54.010346: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:01:54.493022: lr: 0.009404 
+2022-10-21 03:01:54.493186: This epoch took 697.719333 s
+ 
+2022-10-21 03:01:54.493238: 
+epoch:  66 
+2022-10-21 03:12:34.241847: train loss : -0.8737 
+2022-10-21 03:13:13.595484: validation loss: -0.7326 
+2022-10-21 03:13:13.595983: Average global foreground Dice: [0.7047, 0.8924] 
+2022-10-21 03:13:13.596085: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:13:14.118779: lr: 0.009395 
+2022-10-21 03:13:14.220154: saving checkpoint... 
+2022-10-21 03:13:14.723614: done, saving took 0.60 seconds 
+2022-10-21 03:13:14.731787: This epoch took 680.238497 s
+ 
+2022-10-21 03:13:14.731894: 
+epoch:  67 
+2022-10-21 03:23:57.558386: train loss : -0.8856 
+2022-10-21 03:24:37.799690: validation loss: -0.7366 
+2022-10-21 03:24:37.800184: Average global foreground Dice: [0.7024, 0.8989] 
+2022-10-21 03:24:37.800286: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:24:38.325924: lr: 0.009386 
+2022-10-21 03:24:38.427274: saving checkpoint... 
+2022-10-21 03:24:38.991814: done, saving took 0.67 seconds 
+2022-10-21 03:24:38.997785: This epoch took 684.265816 s
+ 
+2022-10-21 03:24:38.997879: 
+epoch:  68 
+2022-10-21 03:35:41.064444: train loss : -0.8767 
+2022-10-21 03:36:20.616160: validation loss: -0.7402 
+2022-10-21 03:36:20.616647: Average global foreground Dice: [0.7076, 0.9002] 
+2022-10-21 03:36:20.616768: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:36:21.130233: lr: 0.009377 
+2022-10-21 03:36:21.171814: saving checkpoint... 
+2022-10-21 03:36:21.627171: done, saving took 0.50 seconds 
+2022-10-21 03:36:21.628067: This epoch took 702.630120 s
+ 
+2022-10-21 03:36:21.628157: 
+epoch:  69 
+2022-10-21 03:47:03.569865: train loss : -0.8778 
+2022-10-21 03:47:42.196376: validation loss: -0.7507 
+2022-10-21 03:47:42.197077: Average global foreground Dice: [0.7212, 0.8951] 
+2022-10-21 03:47:42.197181: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:47:42.670013: lr: 0.009368 
+2022-10-21 03:47:42.712089: saving checkpoint... 
+2022-10-21 03:47:43.181510: done, saving took 0.51 seconds 
+2022-10-21 03:47:43.182395: This epoch took 681.554164 s
+ 
+2022-10-21 03:47:43.182482: 
+epoch:  70 
+2022-10-21 03:58:08.563932: train loss : -0.8575 
+2022-10-21 03:58:45.071208: validation loss: -0.7326 
+2022-10-21 03:58:45.071683: Average global foreground Dice: [0.7019, 0.8928] 
+2022-10-21 03:58:45.071788: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 03:58:45.587585: lr: 0.009359 
+2022-10-21 03:58:45.629312: saving checkpoint... 
+2022-10-21 03:58:46.112244: done, saving took 0.52 seconds 
+2022-10-21 03:58:46.113183: This epoch took 662.930626 s
+ 
+2022-10-21 03:58:46.113276: 
+epoch:  71 
+2022-10-21 04:09:05.320232: train loss : -0.8608 
+2022-10-21 04:09:45.113073: validation loss: -0.7448 
+2022-10-21 04:09:45.113590: Average global foreground Dice: [0.7166, 0.8939] 
+2022-10-21 04:09:45.113696: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 04:09:45.629375: lr: 0.00935 
+2022-10-21 04:09:45.670847: saving checkpoint... 
+2022-10-21 04:09:46.160467: done, saving took 0.53 seconds 
+2022-10-21 04:09:46.161547: This epoch took 660.048195 s
+ 
+2022-10-21 04:09:46.161631: 
+epoch:  72 
+2022-10-21 04:20:48.085464: train loss : -0.8570 
+2022-10-21 04:21:28.078408: validation loss: -0.7353 
+2022-10-21 04:21:28.078896: Average global foreground Dice: [0.6909, 0.8997] 
+2022-10-21 04:21:28.078993: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 04:21:28.593477: lr: 0.009341 
+2022-10-21 04:21:28.593645: This epoch took 702.431932 s
+ 
+2022-10-21 04:21:28.593705: 
+epoch:  73 
+2022-10-21 04:32:29.789252: train loss : -0.8628 
+2022-10-21 04:33:09.908044: validation loss: -0.7449 
+2022-10-21 04:33:09.908640: Average global foreground Dice: [0.7105, 0.8992] 
+2022-10-21 04:33:09.908740: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 04:33:10.421729: lr: 0.009331 
+2022-10-21 04:33:10.469361: saving checkpoint... 
+2022-10-21 04:33:10.953518: done, saving took 0.53 seconds 
+2022-10-21 04:33:10.959768: This epoch took 702.366008 s
+ 
+2022-10-21 04:33:10.959866: 
+epoch:  74 
+2022-10-21 04:43:54.218851: train loss : -0.8684 
+2022-10-21 04:44:34.264761: validation loss: -0.7111 
+2022-10-21 04:44:34.265383: Average global foreground Dice: [0.6616, 0.8883] 
+2022-10-21 04:44:34.265486: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 04:44:34.780072: lr: 0.009322 
+2022-10-21 04:44:34.780246: This epoch took 683.820304 s
+ 
+2022-10-21 04:44:34.780307: 
+epoch:  75 
+2022-10-21 04:55:39.557271: train loss : -0.8854 
+2022-10-21 04:56:19.845403: validation loss: -0.7464 
+2022-10-21 04:56:19.845899: Average global foreground Dice: [0.7148, 0.8998] 
+2022-10-21 04:56:19.846004: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 04:56:20.320412: lr: 0.009313 
+2022-10-21 04:56:20.320714: This epoch took 705.540351 s
+ 
+2022-10-21 04:56:20.320795: 
+epoch:  76 
+2022-10-21 05:07:25.844925: train loss : -0.8840 
+2022-10-21 05:08:06.157076: validation loss: -0.7594 
+2022-10-21 05:08:06.157612: Average global foreground Dice: [0.7347, 0.9011] 
+2022-10-21 05:08:06.157720: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 05:08:06.642509: lr: 0.009304 
+2022-10-21 05:08:06.745091: saving checkpoint... 
+2022-10-21 05:08:07.324899: done, saving took 0.68 seconds 
+2022-10-21 05:08:07.331597: This epoch took 707.010723 s
+ 
+2022-10-21 05:08:07.331700: 
+epoch:  77 
+2022-10-21 05:19:00.794182: train loss : -0.8865 
+2022-10-21 05:19:37.775899: validation loss: -0.7310 
+2022-10-21 05:19:37.776484: Average global foreground Dice: [0.6939, 0.8971] 
+2022-10-21 05:19:37.776588: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 05:19:38.293270: lr: 0.009295 
+2022-10-21 05:19:38.293443: This epoch took 690.961685 s
+ 
+2022-10-21 05:19:38.293521: 
+epoch:  78 
+2022-10-21 05:30:34.035683: train loss : -0.8838 
+2022-10-21 05:31:14.021256: validation loss: -0.7196 
+2022-10-21 05:31:14.021742: Average global foreground Dice: [0.6776, 0.8985] 
+2022-10-21 05:31:14.021844: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 05:31:14.501592: lr: 0.009286 
+2022-10-21 05:31:14.501765: This epoch took 696.208166 s
+ 
+2022-10-21 05:31:14.501837: 
+epoch:  79 
+2022-10-21 05:41:40.020870: train loss : -0.8916 
+2022-10-21 05:42:17.720995: validation loss: -0.7425 
+2022-10-21 05:42:17.721483: Average global foreground Dice: [0.7092, 0.8985] 
+2022-10-21 05:42:17.721585: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 05:42:18.215138: lr: 0.009277 
+2022-10-21 05:42:18.215319: This epoch took 663.713410 s
+ 
+2022-10-21 05:42:18.215398: 
+epoch:  80 
+2022-10-21 05:53:20.391013: train loss : -0.8933 
+2022-10-21 05:54:00.508684: validation loss: -0.7411 
+2022-10-21 05:54:00.509329: Average global foreground Dice: [0.7108, 0.8996] 
+2022-10-21 05:54:00.509431: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 05:54:01.024475: lr: 0.009268 
+2022-10-21 05:54:01.024694: This epoch took 702.809224 s
+ 
+2022-10-21 05:54:01.024751: 
+epoch:  81 
+2022-10-21 06:04:43.737617: train loss : -0.8882 
+2022-10-21 06:05:23.493434: validation loss: -0.7308 
+2022-10-21 06:05:23.493934: Average global foreground Dice: [0.6984, 0.893] 
+2022-10-21 06:05:23.494053: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 06:05:24.009228: lr: 0.009259 
+2022-10-21 06:05:24.009410: This epoch took 682.984608 s
+ 
+2022-10-21 06:05:24.009478: 
+epoch:  82 
+2022-10-21 06:16:08.586357: train loss : -0.8948 
+2022-10-21 06:16:47.319319: validation loss: -0.7376 
+2022-10-21 06:16:47.319816: Average global foreground Dice: [0.7115, 0.8923] 
+2022-10-21 06:16:47.319918: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 06:16:47.830096: lr: 0.00925 
+2022-10-21 06:16:47.830274: This epoch took 683.820736 s
+ 
+2022-10-21 06:16:47.830389: 
+epoch:  83 
+2022-10-21 06:27:48.565650: train loss : -0.8881 
+2022-10-21 06:28:25.484340: validation loss: -0.7208 
+2022-10-21 06:28:25.484845: Average global foreground Dice: [0.6891, 0.8948] 
+2022-10-21 06:28:25.484981: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 06:28:26.001452: lr: 0.009241 
+2022-10-21 06:28:26.001638: This epoch took 698.171175 s
+ 
+2022-10-21 06:28:26.001712: 
+epoch:  84 
+2022-10-21 06:39:16.299104: train loss : -0.8537 
+2022-10-21 06:39:56.664305: validation loss: -0.7171 
+2022-10-21 06:39:56.664881: Average global foreground Dice: [0.6747, 0.9007] 
+2022-10-21 06:39:56.665010: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 06:39:57.143575: lr: 0.009232 
+2022-10-21 06:39:57.143758: This epoch took 691.141970 s
+ 
+2022-10-21 06:39:57.143839: 
+epoch:  85 
+2022-10-21 06:50:41.529146: train loss : -0.8565 
+2022-10-21 06:51:21.461873: validation loss: -0.7369 
+2022-10-21 06:51:21.462386: Average global foreground Dice: [0.7034, 0.8925] 
+2022-10-21 06:51:21.462502: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 06:51:21.941844: lr: 0.009223 
+2022-10-21 06:51:21.942015: This epoch took 684.798102 s
+ 
+2022-10-21 06:51:21.942076: 
+epoch:  86 
+2022-10-21 07:02:26.161617: train loss : -0.8764 
+2022-10-21 07:03:06.353008: validation loss: -0.7488 
+2022-10-21 07:03:06.353499: Average global foreground Dice: [0.7163, 0.8982] 
+2022-10-21 07:03:06.353601: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:03:06.834030: lr: 0.009213 
+2022-10-21 07:03:06.834194: This epoch took 704.892065 s
+ 
+2022-10-21 07:03:06.834257: 
+epoch:  87 
+2022-10-21 07:14:11.810080: train loss : -0.8798 
+2022-10-21 07:14:51.805352: validation loss: -0.7251 
+2022-10-21 07:14:51.805933: Average global foreground Dice: [0.6849, 0.8985] 
+2022-10-21 07:14:51.806039: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:14:52.315062: lr: 0.009204 
+2022-10-21 07:14:52.315241: This epoch took 705.480931 s
+ 
+2022-10-21 07:14:52.315320: 
+epoch:  88 
+2022-10-21 07:25:21.909844: train loss : -0.8999 
+2022-10-21 07:25:59.200916: validation loss: -0.7376 
+2022-10-21 07:25:59.201431: Average global foreground Dice: [0.7137, 0.8988] 
+2022-10-21 07:25:59.201536: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:25:59.712382: lr: 0.009195 
+2022-10-21 07:25:59.712546: This epoch took 667.397154 s
+ 
+2022-10-21 07:25:59.712619: 
+epoch:  89 
+2022-10-21 07:36:40.726393: train loss : -0.8825 
+2022-10-21 07:37:20.770039: validation loss: -0.7498 
+2022-10-21 07:37:20.770629: Average global foreground Dice: [0.7186, 0.9014] 
+2022-10-21 07:37:20.770733: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:37:21.228149: lr: 0.009186 
+2022-10-21 07:37:21.270044: saving checkpoint... 
+2022-10-21 07:37:21.754258: done, saving took 0.53 seconds 
+2022-10-21 07:37:21.809260: This epoch took 682.096564 s
+ 
+2022-10-21 07:37:21.809359: 
+epoch:  90 
+2022-10-21 07:48:05.888618: train loss : -0.8935 
+2022-10-21 07:48:46.032475: validation loss: -0.7299 
+2022-10-21 07:48:46.032977: Average global foreground Dice: [0.6992, 0.8996] 
+2022-10-21 07:48:46.033069: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:48:46.532283: lr: 0.009177 
+2022-10-21 07:48:46.532451: This epoch took 684.723024 s
+ 
+2022-10-21 07:48:46.532517: 
+epoch:  91 
+2022-10-21 07:59:18.480377: train loss : -0.8880 
+2022-10-21 07:59:55.725877: validation loss: -0.7361 
+2022-10-21 07:59:55.726373: Average global foreground Dice: [0.7083, 0.8937] 
+2022-10-21 07:59:55.726471: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 07:59:56.225054: lr: 0.009168 
+2022-10-21 07:59:56.272352: saving checkpoint... 
+2022-10-21 07:59:56.762887: done, saving took 0.54 seconds 
+2022-10-21 07:59:56.767670: This epoch took 670.235102 s
+ 
+2022-10-21 07:59:56.767773: 
+epoch:  92 
+2022-10-21 08:10:39.919016: train loss : -0.8933 
+2022-10-21 08:11:19.535723: validation loss: -0.7410 
+2022-10-21 08:11:19.536300: Average global foreground Dice: [0.7158, 0.8975] 
+2022-10-21 08:11:19.536396: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 08:11:20.048827: lr: 0.009159 
+2022-10-21 08:11:20.122854: saving checkpoint... 
+2022-10-21 08:11:20.633115: done, saving took 0.58 seconds 
+2022-10-21 08:11:20.639244: This epoch took 683.871410 s
+ 
+2022-10-21 08:11:20.639472: 
+epoch:  93 
+2022-10-21 08:21:43.576087: train loss : -0.8936 
+2022-10-21 08:22:20.475317: validation loss: -0.7424 
+2022-10-21 08:22:20.475801: Average global foreground Dice: [0.7178, 0.8964] 
+2022-10-21 08:22:20.475901: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 08:22:20.983338: lr: 0.00915 
+2022-10-21 08:22:21.073503: saving checkpoint... 
+2022-10-21 08:22:21.551905: done, saving took 0.57 seconds 
+2022-10-21 08:22:21.557980: This epoch took 660.918426 s
+ 
+2022-10-21 08:22:21.558083: 
+epoch:  94 
+2022-10-21 08:33:14.805735: train loss : -0.8906 
+2022-10-21 08:33:51.834419: validation loss: -0.7242 
+2022-10-21 08:33:51.834908: Average global foreground Dice: [0.6867, 0.8976] 
+2022-10-21 08:33:51.835013: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 08:33:52.361404: lr: 0.009141 
+2022-10-21 08:33:52.361571: This epoch took 690.803417 s
+ 
+2022-10-21 08:33:52.361624: 
+epoch:  95 
+2022-10-21 08:44:43.223976: train loss : -0.9010 
+2022-10-21 08:45:23.650934: validation loss: -0.7341 
+2022-10-21 08:45:23.651392: Average global foreground Dice: [0.7071, 0.8989] 
+2022-10-21 08:45:23.651485: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 08:45:24.169832: lr: 0.009132 
+2022-10-21 08:45:24.169998: This epoch took 691.808324 s
+ 
+2022-10-21 08:45:24.170101: 
+epoch:  96 
+2022-10-21 08:56:27.581305: train loss : -0.8885 
+2022-10-21 08:57:07.385923: validation loss: -0.7477 
+2022-10-21 08:57:07.386393: Average global foreground Dice: [0.7116, 0.9058] 
+2022-10-21 08:57:07.386493: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 08:57:07.885952: lr: 0.009123 
+2022-10-21 08:57:07.927237: saving checkpoint... 
+2022-10-21 08:57:08.405743: done, saving took 0.52 seconds 
+2022-10-21 08:57:08.406661: This epoch took 704.236482 s
+ 
+2022-10-21 08:57:08.406751: 
+epoch:  97 
+2022-10-21 09:08:11.297337: train loss : -0.8880 
+2022-10-21 09:08:51.034428: validation loss: -0.7402 
+2022-10-21 09:08:51.034913: Average global foreground Dice: [0.7115, 0.9022] 
+2022-10-21 09:08:51.035015: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 09:08:51.546637: lr: 0.009114 
+2022-10-21 09:08:51.588120: saving checkpoint... 
+2022-10-21 09:08:52.060075: done, saving took 0.51 seconds 
+2022-10-21 09:08:52.060973: This epoch took 703.654147 s
+ 
+2022-10-21 09:08:52.061059: 
+epoch:  98 
+2022-10-21 09:19:55.933096: train loss : -0.9012 
+2022-10-21 09:20:36.108999: validation loss: -0.7357 
+2022-10-21 09:20:36.109600: Average global foreground Dice: [0.6992, 0.9018] 
+2022-10-21 09:20:36.109694: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 09:20:36.607536: lr: 0.009104 
+2022-10-21 09:20:36.607705: This epoch took 704.546573 s
+ 
+2022-10-21 09:20:36.607764: 
+epoch:  99 
+2022-10-21 09:31:24.935859: train loss : -0.9067 
+2022-10-21 09:32:02.916512: validation loss: -0.7441 
+2022-10-21 09:32:02.916996: Average global foreground Dice: [0.7118, 0.9022] 
+2022-10-21 09:32:02.917095: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 09:32:03.416669: lr: 0.009095 
+2022-10-21 09:32:03.416900: saving scheduled checkpoint file... 
+2022-10-21 09:32:03.458036: saving checkpoint... 
+2022-10-21 09:32:03.903130: done, saving took 0.49 seconds 
+2022-10-21 09:32:03.904024: done 
+2022-10-21 09:32:03.944625: saving checkpoint... 
+2022-10-21 09:32:05.729626: done, saving took 1.83 seconds 
+2022-10-21 09:32:05.730528: This epoch took 689.122699 s
+ 
+2022-10-21 09:32:05.730613: 
+epoch:  100 
+2022-10-21 09:43:07.099700: train loss : -0.9016 
+2022-10-21 09:43:46.764782: validation loss: -0.7405 
+2022-10-21 09:43:46.765293: Average global foreground Dice: [0.7147, 0.9001] 
+2022-10-21 09:43:46.765397: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 09:43:47.277395: lr: 0.009086 
+2022-10-21 09:43:47.336543: saving checkpoint... 
+2022-10-21 09:43:47.817744: done, saving took 0.54 seconds 
+2022-10-21 09:43:47.822492: This epoch took 702.091817 s
+ 
+2022-10-21 09:43:47.822598: 
+epoch:  101 
+2022-10-21 09:54:31.220590: train loss : -0.8988 
+2022-10-21 09:55:11.604857: validation loss: -0.7314 
+2022-10-21 09:55:11.605401: Average global foreground Dice: [0.7032, 0.8969] 
+2022-10-21 09:55:11.605517: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 09:55:12.122798: lr: 0.009077 
+2022-10-21 09:55:12.122973: This epoch took 684.300313 s
+ 
+2022-10-21 09:55:12.123050: 
+epoch:  102 
+2022-10-21 10:05:55.472700: train loss : -0.9015 
+2022-10-21 10:06:33.143734: validation loss: -0.7487 
+2022-10-21 10:06:33.144202: Average global foreground Dice: [0.7207, 0.9046] 
+2022-10-21 10:06:33.144299: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 10:06:33.654299: lr: 0.009068 
+2022-10-21 10:06:33.744910: saving checkpoint... 
+2022-10-21 10:06:34.219893: done, saving took 0.57 seconds 
+2022-10-21 10:06:34.227102: This epoch took 682.103974 s
+ 
+2022-10-21 10:06:34.227201: 
+epoch:  103 
+2022-10-21 10:16:53.832554: train loss : -0.9025 
+2022-10-21 10:17:31.332417: validation loss: -0.7368 
+2022-10-21 10:17:31.332973: Average global foreground Dice: [0.7097, 0.899] 
+2022-10-21 10:17:31.333096: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 10:17:31.813156: lr: 0.009059 
+2022-10-21 10:17:31.910540: saving checkpoint... 
+2022-10-21 10:17:32.414252: done, saving took 0.60 seconds 
+2022-10-21 10:17:32.476633: This epoch took 658.249365 s
+ 
+2022-10-21 10:17:32.476770: 
+epoch:  104 
+2022-10-21 10:28:34.422777: train loss : -0.8985 
+2022-10-21 10:29:14.823624: validation loss: -0.7286 
+2022-10-21 10:29:14.824157: Average global foreground Dice: [0.6942, 0.9037] 
+2022-10-21 10:29:14.824265: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 10:29:15.316016: lr: 0.00905 
+2022-10-21 10:29:15.316198: This epoch took 702.839362 s
+ 
+2022-10-21 10:29:15.316278: 
+epoch:  105 
+2022-10-21 10:40:18.777591: train loss : -0.8948 
+2022-10-21 10:40:58.933737: validation loss: -0.7555 
+2022-10-21 10:40:58.934271: Average global foreground Dice: [0.7282, 0.9047] 
+2022-10-21 10:40:58.934379: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 10:40:59.408683: lr: 0.009041 
+2022-10-21 10:40:59.450666: saving checkpoint... 
+2022-10-21 10:40:59.907336: done, saving took 0.50 seconds 
+2022-10-21 10:40:59.908305: This epoch took 704.591957 s
+ 
+2022-10-21 10:40:59.908402: 
+epoch:  106 
+2022-10-21 10:51:32.346149: train loss : -0.8970 
+2022-10-21 10:52:09.325688: validation loss: -0.7323 
+2022-10-21 10:52:09.326285: Average global foreground Dice: [0.7016, 0.9017] 
+2022-10-21 10:52:09.326390: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 10:52:09.798817: lr: 0.009032 
+2022-10-21 10:52:09.798993: This epoch took 669.890537 s
+ 
+2022-10-21 10:52:09.799052: 
+epoch:  107 
+2022-10-21 11:02:54.448691: train loss : -0.8895 
+2022-10-21 11:03:30.984826: validation loss: -0.7371 
+2022-10-21 11:03:30.985364: Average global foreground Dice: [0.7099, 0.8989] 
+2022-10-21 11:03:30.985479: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 11:03:31.502727: lr: 0.009023 
+2022-10-21 11:03:31.502966: This epoch took 681.703846 s
+ 
+2022-10-21 11:03:31.503049: 
+epoch:  108 
+2022-10-21 11:13:48.672668: train loss : -0.9023 
+2022-10-21 11:14:26.741163: validation loss: -0.7293 
+2022-10-21 11:14:26.741678: Average global foreground Dice: [0.7004, 0.8976] 
+2022-10-21 11:14:26.741784: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 11:14:27.259549: lr: 0.009013 
+2022-10-21 11:14:27.259736: This epoch took 655.756613 s
+ 
+2022-10-21 11:14:27.259816: 
+epoch:  109 
+2022-10-21 11:25:29.726954: train loss : -0.9045 
+2022-10-21 11:26:08.111900: validation loss: -0.7216 
+2022-10-21 11:26:08.112377: Average global foreground Dice: [0.6907, 0.9013] 
+2022-10-21 11:26:08.112483: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 11:26:08.623775: lr: 0.009004 
+2022-10-21 11:26:08.623943: This epoch took 701.364056 s
+ 
+2022-10-21 11:26:08.624010: 
+epoch:  110 
+2022-10-21 11:36:53.182096: train loss : -0.8931 
+2022-10-21 11:37:33.123570: validation loss: -0.7509 
+2022-10-21 11:37:33.124037: Average global foreground Dice: [0.7234, 0.9019] 
+2022-10-21 11:37:33.124132: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 11:37:33.635334: lr: 0.008995 
+2022-10-21 11:37:33.635497: This epoch took 685.011424 s
+ 
+2022-10-21 11:37:33.635554: 
+epoch:  111 
+2022-10-21 11:48:35.189221: train loss : -0.8958 
+2022-10-21 11:49:14.917661: validation loss: -0.7312 
+2022-10-21 11:49:14.918170: Average global foreground Dice: [0.705, 0.8962] 
+2022-10-21 11:49:14.918281: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 11:49:15.430775: lr: 0.008986 
+2022-10-21 11:49:15.430946: This epoch took 701.795324 s
+ 
+2022-10-21 11:49:15.431003: 
+epoch:  112 
+2022-10-21 12:00:04.506768: train loss : -0.9023 
+2022-10-21 12:00:41.946576: validation loss: -0.7400 
+2022-10-21 12:00:41.947061: Average global foreground Dice: [0.716, 0.8985] 
+2022-10-21 12:00:41.947154: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:00:42.452630: lr: 0.008977 
+2022-10-21 12:00:42.452807: This epoch took 687.021749 s
+ 
+2022-10-21 12:00:42.452867: 
+epoch:  113 
+2022-10-21 12:11:42.928463: train loss : -0.9008 
+2022-10-21 12:12:23.062431: validation loss: -0.7313 
+2022-10-21 12:12:23.062980: Average global foreground Dice: [0.6999, 0.8982] 
+2022-10-21 12:12:23.063091: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:12:23.573683: lr: 0.008968 
+2022-10-21 12:12:23.573850: This epoch took 701.120930 s
+ 
+2022-10-21 12:12:23.573923: 
+epoch:  114 
+2022-10-21 12:23:03.628264: train loss : -0.9042 
+2022-10-21 12:23:40.584991: validation loss: -0.7396 
+2022-10-21 12:23:40.585630: Average global foreground Dice: [0.7077, 0.9009] 
+2022-10-21 12:23:40.585740: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:23:41.094484: lr: 0.008959 
+2022-10-21 12:23:41.094641: This epoch took 677.520648 s
+ 
+2022-10-21 12:23:41.094711: 
+epoch:  115 
+2022-10-21 12:34:12.637549: train loss : -0.9065 
+2022-10-21 12:34:52.849973: validation loss: -0.7293 
+2022-10-21 12:34:52.850485: Average global foreground Dice: [0.7017, 0.898] 
+2022-10-21 12:34:52.850573: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:34:53.354675: lr: 0.00895 
+2022-10-21 12:34:53.354834: This epoch took 672.260055 s
+ 
+2022-10-21 12:34:53.354885: 
+epoch:  116 
+2022-10-21 12:45:27.883264: train loss : -0.9034 
+2022-10-21 12:46:07.955148: validation loss: -0.7247 
+2022-10-21 12:46:07.955610: Average global foreground Dice: [0.6871, 0.9005] 
+2022-10-21 12:46:07.955705: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:46:08.417417: lr: 0.008941 
+2022-10-21 12:46:08.417661: This epoch took 675.062728 s
+ 
+2022-10-21 12:46:08.417723: 
+epoch:  117 
+2022-10-21 12:57:11.694957: train loss : -0.9047 
+2022-10-21 12:57:51.726622: validation loss: -0.7364 
+2022-10-21 12:57:51.727132: Average global foreground Dice: [0.7151, 0.8984] 
+2022-10-21 12:57:51.727234: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 12:57:52.188761: lr: 0.008931 
+2022-10-21 12:57:52.188941: This epoch took 703.771147 s
+ 
+2022-10-21 12:57:52.189031: 
+epoch:  118 
+2022-10-21 13:08:39.788650: train loss : -0.9118 
+2022-10-21 13:09:17.692415: validation loss: -0.7301 
+2022-10-21 13:09:17.692917: Average global foreground Dice: [0.7018, 0.8997] 
+2022-10-21 13:09:17.693038: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 13:09:18.152346: lr: 0.008922 
+2022-10-21 13:09:18.152497: This epoch took 685.963392 s
+ 
+2022-10-21 13:09:18.152549: 
+epoch:  119 
+2022-10-21 13:20:19.663571: train loss : -0.9069 
+2022-10-21 13:20:59.931779: validation loss: -0.7416 
+2022-10-21 13:20:59.932301: Average global foreground Dice: [0.7225, 0.8998] 
+2022-10-21 13:20:59.932400: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 13:21:00.433188: lr: 0.008913 
+2022-10-21 13:21:00.433358: This epoch took 702.280759 s
+ 
+2022-10-21 13:21:00.433429: 
+epoch:  120 
+2022-10-21 13:32:00.422344: train loss : -0.9036 
+2022-10-21 13:32:37.175578: validation loss: -0.7346 
+2022-10-21 13:32:37.176035: Average global foreground Dice: [0.713, 0.8954] 
+2022-10-21 13:32:37.176122: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 13:32:37.635547: lr: 0.008904 
+2022-10-21 13:32:37.635711: This epoch took 697.202213 s
+ 
+2022-10-21 13:32:37.635779: 
+epoch:  121 
+2022-10-21 13:43:21.245423: train loss : -0.9058 
+2022-10-21 13:44:01.289198: validation loss: -0.7365 
+2022-10-21 13:44:01.289750: Average global foreground Dice: [0.7095, 0.8998] 
+2022-10-21 13:44:01.289844: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 13:44:01.748539: lr: 0.008895 
+2022-10-21 13:44:01.748703: This epoch took 684.112870 s
+ 
+2022-10-21 13:44:01.748780: 
+epoch:  122 
+2022-10-21 13:54:24.517618: train loss : -0.9122 
+2022-10-21 13:55:01.277899: validation loss: -0.7406 
+2022-10-21 13:55:01.278531: Average global foreground Dice: [0.7207, 0.8973] 
+2022-10-21 13:55:01.278624: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 13:55:01.736603: lr: 0.008886 
+2022-10-21 13:55:01.736770: This epoch took 659.987906 s
+ 
+2022-10-21 13:55:01.736846: 
+epoch:  123 
+2022-10-21 14:05:57.371622: train loss : -0.9041 
+2022-10-21 14:06:36.038631: validation loss: -0.7318 
+2022-10-21 14:06:36.039150: Average global foreground Dice: [0.7047, 0.8987] 
+2022-10-21 14:06:36.039257: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 14:06:36.511494: lr: 0.008877 
+2022-10-21 14:06:36.511657: This epoch took 694.774733 s
+ 
+2022-10-21 14:06:36.511731: 
+epoch:  124 
+2022-10-21 14:17:22.193605: train loss : -0.8991 
+2022-10-21 14:18:02.173063: validation loss: -0.7235 
+2022-10-21 14:18:02.173552: Average global foreground Dice: [0.6874, 0.8986] 
+2022-10-21 14:18:02.173648: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 14:18:02.688301: lr: 0.008868 
+2022-10-21 14:18:02.688464: This epoch took 686.176663 s
+ 
+2022-10-21 14:18:02.688540: 
+epoch:  125 
+2022-10-21 14:28:46.734473: train loss : -0.9095 
+2022-10-21 14:29:25.848987: validation loss: -0.7316 
+2022-10-21 14:29:25.849406: Average global foreground Dice: [0.7083, 0.8973] 
+2022-10-21 14:29:25.849491: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 14:29:26.353843: lr: 0.008859 
+2022-10-21 14:29:26.353998: This epoch took 683.665388 s
+ 
+2022-10-21 14:29:26.354055: 
+epoch:  126 
+2022-10-21 14:39:45.888689: train loss : -0.8953 
+2022-10-21 14:40:25.634139: validation loss: -0.7196 
+2022-10-21 14:40:25.634583: Average global foreground Dice: [0.6916, 0.8991] 
+2022-10-21 14:40:25.634672: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 14:40:26.138327: lr: 0.008849 
+2022-10-21 14:40:26.138498: This epoch took 659.784388 s
+ 
+2022-10-21 14:40:26.138574: 
+epoch:  127 
+2022-10-21 14:51:31.209356: train loss : -0.9124 
+2022-10-21 14:52:11.244131: validation loss: -0.7330 
+2022-10-21 14:52:11.244693: Average global foreground Dice: [0.6995, 0.9019] 
+2022-10-21 14:52:11.244790: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 14:52:11.746176: lr: 0.00884 
+2022-10-21 14:52:11.746341: This epoch took 705.607702 s
+ 
+2022-10-21 14:52:11.746392: 
+epoch:  128 
+2022-10-21 15:02:54.093685: train loss : -0.9135 
+2022-10-21 15:03:33.938219: validation loss: -0.7371 
+2022-10-21 15:03:33.938682: Average global foreground Dice: [0.7155, 0.8966] 
+2022-10-21 15:03:33.938788: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:03:34.403200: lr: 0.008831 
+2022-10-21 15:03:34.403367: This epoch took 682.656928 s
+ 
+2022-10-21 15:03:34.403424: 
+epoch:  129 
+2022-10-21 15:14:07.170007: train loss : -0.9049 
+2022-10-21 15:14:43.971337: validation loss: -0.7285 
+2022-10-21 15:14:43.971817: Average global foreground Dice: [0.6984, 0.8947] 
+2022-10-21 15:14:43.971923: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:14:44.439788: lr: 0.008822 
+2022-10-21 15:14:44.439949: This epoch took 670.036468 s
+ 
+2022-10-21 15:14:44.440020: 
+epoch:  130 
+2022-10-21 15:25:04.589824: train loss : -0.9126 
+2022-10-21 15:25:41.749345: validation loss: -0.7450 
+2022-10-21 15:25:41.749833: Average global foreground Dice: [0.7236, 0.8983] 
+2022-10-21 15:25:41.749937: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:25:42.264131: lr: 0.008813 
+2022-10-21 15:25:42.264305: This epoch took 657.824212 s
+ 
+2022-10-21 15:25:42.264382: 
+epoch:  131 
+2022-10-21 15:36:23.123265: train loss : -0.9066 
+2022-10-21 15:37:03.524825: validation loss: -0.7481 
+2022-10-21 15:37:03.525342: Average global foreground Dice: [0.7222, 0.9027] 
+2022-10-21 15:37:03.525447: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:37:04.042697: lr: 0.008804 
+2022-10-21 15:37:04.042858: This epoch took 681.778401 s
+ 
+2022-10-21 15:37:04.042916: 
+epoch:  132 
+2022-10-21 15:47:49.619515: train loss : -0.9052 
+2022-10-21 15:48:27.458799: validation loss: -0.7387 
+2022-10-21 15:48:27.459346: Average global foreground Dice: [0.702, 0.905] 
+2022-10-21 15:48:27.459455: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:48:27.990468: lr: 0.008795 
+2022-10-21 15:48:27.990621: This epoch took 683.947652 s
+ 
+2022-10-21 15:48:27.990673: 
+epoch:  133 
+2022-10-21 15:59:14.686167: train loss : -0.9094 
+2022-10-21 15:59:54.582690: validation loss: -0.7406 
+2022-10-21 15:59:54.583153: Average global foreground Dice: [0.712, 0.903] 
+2022-10-21 15:59:54.583251: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 15:59:55.111691: lr: 0.008785 
+2022-10-21 15:59:55.111907: This epoch took 687.121183 s
+ 
+2022-10-21 15:59:55.111989: 
+epoch:  134 
+2022-10-21 16:10:37.064680: train loss : -0.9113 
+2022-10-21 16:11:17.334075: validation loss: -0.7305 
+2022-10-21 16:11:17.334688: Average global foreground Dice: [0.6995, 0.8995] 
+2022-10-21 16:11:17.334808: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 16:11:17.862946: lr: 0.008776 
+2022-10-21 16:11:17.863151: This epoch took 682.751090 s
+ 
+2022-10-21 16:11:17.863236: 
+epoch:  135 
+2022-10-21 16:22:22.318937: train loss : -0.9163 
+2022-10-21 16:23:02.104450: validation loss: -0.7318 
+2022-10-21 16:23:02.104928: Average global foreground Dice: [0.7019, 0.9] 
+2022-10-21 16:23:02.105045: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 16:23:02.635834: lr: 0.008767 
+2022-10-21 16:23:02.636005: This epoch took 704.772689 s
+ 
+2022-10-21 16:23:02.636080: 
+epoch:  136 
+2022-10-21 16:33:45.761274: train loss : -0.9052 
+2022-10-21 16:34:25.852538: validation loss: -0.7436 
+2022-10-21 16:34:25.853001: Average global foreground Dice: [0.725, 0.8983] 
+2022-10-21 16:34:25.853100: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 16:34:26.356527: lr: 0.008758 
+2022-10-21 16:34:26.356674: This epoch took 683.720522 s
+ 
+2022-10-21 16:34:26.356727: 
+epoch:  137 
+2022-10-21 16:45:08.533466: train loss : -0.9104 
+2022-10-21 16:45:48.733486: validation loss: -0.7499 
+2022-10-21 16:45:48.733968: Average global foreground Dice: [0.7357, 0.8955] 
+2022-10-21 16:45:48.734073: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 16:45:49.250165: lr: 0.008749 
+2022-10-21 16:45:49.291436: saving checkpoint... 
+2022-10-21 16:45:49.749031: done, saving took 0.50 seconds 
+2022-10-21 16:45:49.749915: This epoch took 683.393141 s
+ 
+2022-10-21 16:45:49.750005: 
+epoch:  138 
+2022-10-21 16:56:36.632825: train loss : -0.9113 
+2022-10-21 16:57:13.358822: validation loss: -0.7460 
+2022-10-21 16:57:13.359276: Average global foreground Dice: [0.7215, 0.9039] 
+2022-10-21 16:57:13.359381: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 16:57:13.880681: lr: 0.00874 
+2022-10-21 16:57:13.921675: saving checkpoint... 
+2022-10-21 16:57:16.051239: done, saving took 2.17 seconds 
+2022-10-21 16:57:16.052176: This epoch took 686.302098 s
+ 
+2022-10-21 16:57:16.052271: 
+epoch:  139 
+2022-10-21 17:07:51.250395: train loss : -0.9129 
+2022-10-21 17:08:27.944139: validation loss: -0.7357 
+2022-10-21 17:08:27.944609: Average global foreground Dice: [0.7056, 0.901] 
+2022-10-21 17:08:27.944708: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 17:08:28.462726: lr: 0.008731 
+2022-10-21 17:08:28.462904: This epoch took 672.410560 s
+ 
+2022-10-21 17:08:28.462964: 
+epoch:  140 
+2022-10-21 17:18:48.604384: train loss : -0.9047 
+2022-10-21 17:19:26.574239: validation loss: -0.7488 
+2022-10-21 17:19:26.574728: Average global foreground Dice: [0.7195, 0.9028] 
+2022-10-21 17:19:26.574826: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 17:19:27.092446: lr: 0.008722 
+2022-10-21 17:19:27.146208: saving checkpoint... 
+2022-10-21 17:19:29.305466: done, saving took 2.21 seconds 
+2022-10-21 17:19:29.310898: This epoch took 660.847876 s
+ 
+2022-10-21 17:19:29.311001: 
+epoch:  141 
+2022-10-21 17:30:23.179718: train loss : -0.9142 
+2022-10-21 17:31:00.242855: validation loss: -0.7450 
+2022-10-21 17:31:00.243322: Average global foreground Dice: [0.7179, 0.9026] 
+2022-10-21 17:31:00.243419: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-10-21 17:31:00.716841: lr: 0.008712 
+2022-10-21 17:31:00.796589: saving checkpoint... 
+2022-10-21 17:31:02.941746: done, saving took 2.22 seconds 
+2022-10-21 17:31:02.948206: This epoch took 693.637119 s
+ 
+2022-10-21 17:31:02.948302: 
+epoch:  142 

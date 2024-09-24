@@ -1,0 +1,1071 @@
+Starting... 
+2022-10-21 17:41:31.662261: Using dummy2d data augmentation 
+2022-10-21 17:41:31.767882: Using splits from existing split file: /home/shossainova/nnUNet_preprocessed/Task500_Prostate/splits_final.pkl 
+2022-10-21 17:41:31.768694: The split file contains 5 splits. 
+2022-10-21 17:41:31.768767: Desired fold for training: 0 
+2022-10-21 17:41:31.768831: This split has 25 training and 7 validation cases. 
+2022-10-21 17:41:31.819940: TRAINING KEYS:
+ odict_keys(['prostate_01', 'prostate_02', 'prostate_06', 'prostate_07', 'prostate_10', 'prostate_13', 'prostate_16', 'prostate_17', 'prostate_18', 'prostate_21', 'prostate_24', 'prostate_28', 'prostate_29', 'prostate_32', 'prostate_34', 'prostate_35', 'prostate_37', 'prostate_38', 'prostate_39', 'prostate_40', 'prostate_41', 'prostate_43', 'prostate_44', 'prostate_46', 'prostate_47']) 
+2022-10-21 17:41:31.820085: VALIDATION KEYS:
+ odict_keys(['prostate_00', 'prostate_04', 'prostate_14', 'prostate_20', 'prostate_25', 'prostate_31', 'prostate_42']) 
+2022-10-21 17:41:37.125736: loading checkpoint /home/shossainova/nnUNet_trained_models/nnUNet/3d_fullres/Task500_Prostate/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0/model_latest.model train= True 
+2022-10-21 17:41:38.006099: lr: 0.009095 
+2022-10-21 17:41:58.339129: Unable to plot network architecture: 
+2022-10-21 17:41:58.360987: _jit_pass_onnx_unpack_quantized_weights(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: torch::jit::Graph, arg1: Dict[str, IValue], arg2: bool) -> Dict[str, IValue]
+
+Invoked with: graph(%input.1 : Float(1, 1, 20, 320, 256, strides=[1638400, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0),
+      %1 : Float(320, 640, 3, 3, 3, strides=[17280, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %2 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %3 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %4 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %5 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %6 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %7 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %8 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %9 : Float(320, 640, 3, 3, 3, strides=[17280, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %10 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %11 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %12 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %13 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %14 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %15 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %16 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %17 : Float(256, 512, 3, 3, 3, strides=[13824, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %18 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %19 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %20 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %21 : Float(256, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %22 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %23 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %24 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %25 : Float(128, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %26 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %27 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %28 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %29 : Float(128, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %30 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %31 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %32 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %33 : Float(64, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %34 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %35 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %36 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %37 : Float(64, 64, 3, 3, 3, strides=[1728, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %38 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %39 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %40 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %41 : Float(32, 64, 1, 3, 3, strides=[576, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %42 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %43 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %44 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %45 : Float(32, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %46 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %47 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %48 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %49 : Float(32, 1, 1, 3, 3, strides=[9, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %50 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %51 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %52 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %53 : Float(32, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %54 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %55 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %56 : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %57 : Float(64, 32, 1, 3, 3, strides=[288, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %58 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %59 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %60 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %61 : Float(64, 64, 1, 3, 3, strides=[576, 9, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %62 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %63 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %64 : Float(64, strides=[1], requires_grad=1, device=cuda:0),
+      %65 : Float(128, 64, 3, 3, 3, strides=[1728, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %66 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %67 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %68 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %69 : Float(128, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %70 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %71 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %72 : Float(128, strides=[1], requires_grad=1, device=cuda:0),
+      %73 : Float(256, 128, 3, 3, 3, strides=[3456, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %74 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %75 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %76 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %77 : Float(256, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %78 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %79 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %80 : Float(256, strides=[1], requires_grad=1, device=cuda:0),
+      %81 : Float(320, 256, 3, 3, 3, strides=[6912, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %82 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %83 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %84 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %85 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %86 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %87 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %88 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %89 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %90 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %91 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %92 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %93 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %94 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %95 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %96 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %97 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %98 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %99 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %100 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %101 : Float(320, 320, 3, 3, 3, strides=[8640, 27, 9, 3, 1], requires_grad=1, device=cuda:0),
+      %102 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %103 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %104 : Float(320, strides=[1], requires_grad=1, device=cuda:0),
+      %105 : Float(320, 320, 1, 2, 2, strides=[1280, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %106 : Float(320, 320, 1, 2, 2, strides=[1280, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %107 : Float(320, 256, 2, 2, 2, strides=[2048, 8, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %108 : Float(256, 128, 2, 2, 2, strides=[1024, 8, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %109 : Float(128, 64, 1, 2, 2, strides=[256, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %110 : Float(64, 32, 1, 2, 2, strides=[128, 4, 4, 2, 1], requires_grad=1, device=cuda:0),
+      %111 : Float(3, 320, 1, 1, 1, strides=[320, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %112 : Float(3, 320, 1, 1, 1, strides=[320, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %113 : Float(3, 256, 1, 1, 1, strides=[256, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %114 : Float(3, 128, 1, 1, 1, strides=[128, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %115 : Float(3, 64, 1, 1, 1, strides=[64, 1, 1, 1, 1], requires_grad=1, device=cuda:0),
+      %116 : Float(3, 32, 1, 1, 1, strides=[32, 1, 1, 1, 1], requires_grad=1, device=cuda:0)):
+  %2036 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2037 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2038 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %363 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2039 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %368 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %369 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %370 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %371 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %372 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.3 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.1, %49, %50, %2036, %2037, %2038, %363, %2039, %368, %369, %370, %371, %372) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %395 : NoneType = prim::Constant()
+  %396 : NoneType = prim::Constant()
+  %397 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %398 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %399 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %400 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %402 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.5 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.3, %51, %52, %395, %396, %397, %398, %399, %400) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2188 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.5, %402) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2040 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2041 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2042 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %416 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2043 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %421 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %422 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %423 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %424 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %425 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.9 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2188, %53, %54, %2040, %2041, %2042, %416, %2043, %421, %422, %423, %424, %425) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %448 : NoneType = prim::Constant()
+  %449 : NoneType = prim::Constant()
+  %450 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %451 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %452 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %453 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %455 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.11 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.9, %55, %56, %448, %449, %450, %451, %452, %453) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2189 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.11, %455) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2044 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2045 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2046 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %469 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2047 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %474 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %475 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %476 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %477 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %478 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.15 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2189, %57, %58, %2044, %2045, %2046, %469, %2047, %474, %475, %476, %477, %478) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %501 : NoneType = prim::Constant()
+  %502 : NoneType = prim::Constant()
+  %503 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %504 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %505 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %506 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %508 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.17 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.15, %59, %60, %501, %502, %503, %504, %505, %506) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2190 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.17, %508) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2048 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2049 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2050 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %522 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2051 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %527 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %528 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %529 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %530 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %531 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.21 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2190, %61, %62, %2048, %2049, %2050, %522, %2051, %527, %528, %529, %530, %531) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %554 : NoneType = prim::Constant()
+  %555 : NoneType = prim::Constant()
+  %556 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %557 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %558 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %559 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %561 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.23 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.21, %63, %64, %554, %555, %556, %557, %558, %559) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2191 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.23, %561) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2052 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2053 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2054 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %575 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2055 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %580 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %581 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %582 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %583 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %584 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.27 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2191, %65, %66, %2052, %2053, %2054, %575, %2055, %580, %581, %582, %583, %584) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %607 : NoneType = prim::Constant()
+  %608 : NoneType = prim::Constant()
+  %609 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %610 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %611 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %612 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %614 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.29 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.27, %67, %68, %607, %608, %609, %610, %611, %612) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2192 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.29, %614) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2056 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2057 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2058 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %628 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2059 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %633 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %634 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %635 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %636 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %637 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.33 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2192, %69, %70, %2056, %2057, %2058, %628, %2059, %633, %634, %635, %636, %637) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %660 : NoneType = prim::Constant()
+  %661 : NoneType = prim::Constant()
+  %662 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %663 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %664 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %665 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %667 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.35 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.33, %71, %72, %660, %661, %662, %663, %664, %665) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2193 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.35, %667) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2060 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2061 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2062 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %681 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2063 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %686 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %687 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %688 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %689 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %690 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.39 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2193, %73, %74, %2060, %2061, %2062, %681, %2063, %686, %687, %688, %689, %690) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %713 : NoneType = prim::Constant()
+  %714 : NoneType = prim::Constant()
+  %715 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %716 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %717 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %718 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %720 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.41 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.39, %75, %76, %713, %714, %715, %716, %717, %718) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2194 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.41, %720) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2064 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2065 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2066 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %734 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2067 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %739 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %740 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %741 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %742 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %743 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.45 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2194, %77, %78, %2064, %2065, %2066, %734, %2067, %739, %740, %741, %742, %743) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %766 : NoneType = prim::Constant()
+  %767 : NoneType = prim::Constant()
+  %768 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %769 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %770 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %771 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %773 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.47 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.45, %79, %80, %766, %767, %768, %769, %770, %771) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2195 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.47, %773) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2068 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2069 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2070 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %787 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2071 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %792 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %793 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %794 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %795 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %796 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.51 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2195, %81, %82, %2068, %2069, %2070, %787, %2071, %792, %793, %794, %795, %796) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %819 : NoneType = prim::Constant()
+  %820 : NoneType = prim::Constant()
+  %821 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %822 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %823 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %824 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %826 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.53 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.51, %83, %84, %819, %820, %821, %822, %823, %824) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2196 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.53, %826) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2072 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2073 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2074 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %840 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2075 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %845 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %846 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %847 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %848 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %849 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.57 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2196, %85, %86, %2072, %2073, %2074, %840, %2075, %845, %846, %847, %848, %849) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %872 : NoneType = prim::Constant()
+  %873 : NoneType = prim::Constant()
+  %874 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %875 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %876 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %877 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %879 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.59 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.57, %87, %88, %872, %873, %874, %875, %876, %877) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2197 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.59, %879) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2076 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2077 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2078 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %893 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2079 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %898 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %899 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %900 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %901 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %902 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.63 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2197, %89, %90, %2076, %2077, %2078, %893, %2079, %898, %899, %900, %901, %902) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %925 : NoneType = prim::Constant()
+  %926 : NoneType = prim::Constant()
+  %927 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %928 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %929 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %930 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %932 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.65 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.63, %91, %92, %925, %926, %927, %928, %929, %930) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2198 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.65, %932) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2080 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2081 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2082 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %946 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2083 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %951 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %952 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %953 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %954 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %955 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.69 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2198, %93, %94, %2080, %2081, %2082, %946, %2083, %951, %952, %953, %954, %955) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %978 : NoneType = prim::Constant()
+  %979 : NoneType = prim::Constant()
+  %980 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %981 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %982 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %983 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %985 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.71 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.69, %95, %96, %978, %979, %980, %981, %982, %983) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2199 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.71, %985) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2084 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2085 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2086 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %999 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2087 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1004 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1005 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1006 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1007 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1008 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.75 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2199, %97, %98, %2084, %2085, %2086, %999, %2087, %1004, %1005, %1006, %1007, %1008) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1031 : NoneType = prim::Constant()
+  %1032 : NoneType = prim::Constant()
+  %1033 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1034 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1035 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1036 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1038 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.77 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.75, %99, %100, %1031, %1032, %1033, %1034, %1035, %1036) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2200 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.77, %1038) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2088 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2089 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2090 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1052 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2091 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1057 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1058 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1059 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1060 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1061 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.81 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2200, %101, %102, %2088, %2089, %2090, %1052, %2091, %1057, %1058, %1059, %1060, %1061) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1084 : NoneType = prim::Constant()
+  %1085 : NoneType = prim::Constant()
+  %1086 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1087 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1088 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1089 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1091 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.83 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.81, %103, %104, %1084, %1085, %1086, %1087, %1088, %1089) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2201 : Float(1, 320, 5, 5, 4, strides=[32000, 100, 20, 4, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.83, %1091) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1093 : NoneType = prim::Constant()
+  %2092 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2093 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2094 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1106 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2095 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1111 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1112 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1113 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1114 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1115 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1116 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2201, %105, %1093, %2092, %2093, %2094, %1106, %2095, %1111, %1112, %1113, %1114, %1115) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1117 : Tensor[] = prim::ListConstruct(%1116, %2199)
+  %1118 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.85 : Float(1, 640, 5, 10, 8, strides=[256000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::cat(%1117, %1118) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2096 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2097 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2098 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1132 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2099 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1137 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1138 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1139 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1140 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1141 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.87 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.85, %1, %2, %2096, %2097, %2098, %1132, %2099, %1137, %1138, %1139, %1140, %1141) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1164 : NoneType = prim::Constant()
+  %1165 : NoneType = prim::Constant()
+  %1166 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1167 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1168 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1169 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1171 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.89 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.87, %3, %4, %1164, %1165, %1166, %1167, %1168, %1169) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2202 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.89, %1171) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2100 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2101 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2102 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1185 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2103 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1190 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1191 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1192 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1193 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1194 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.93 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2202, %5, %6, %2100, %2101, %2102, %1185, %2103, %1190, %1191, %1192, %1193, %1194) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1217 : NoneType = prim::Constant()
+  %1218 : NoneType = prim::Constant()
+  %1219 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1220 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1221 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1222 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1224 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.95 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.93, %7, %8, %1217, %1218, %1219, %1220, %1221, %1222) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2203 : Float(1, 320, 5, 10, 8, strides=[128000, 400, 80, 8, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.95, %1224) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1226 : NoneType = prim::Constant()
+  %2104 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2105 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2106 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1239 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2107 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1244 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1245 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1246 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1247 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1248 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1249 : Float(1, 3, 5, 10, 8, strides=[1200, 400, 80, 8, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2203, %111, %1226, %2104, %2105, %2106, %1239, %2107, %1244, %1245, %1246, %1247, %1248) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1250 : NoneType = prim::Constant()
+  %2108 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2109 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2110 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1263 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2111 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1268 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1269 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1270 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1271 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1272 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1273 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2203, %106, %1250, %2108, %2109, %2110, %1263, %2111, %1268, %1269, %1270, %1271, %1272) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1274 : Tensor[] = prim::ListConstruct(%1273, %2197)
+  %1275 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.99 : Float(1, 640, 5, 20, 16, strides=[1024000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::cat(%1274, %1275) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2112 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2113 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2114 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1289 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2115 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1294 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1295 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1296 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1297 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1298 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.101 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.99, %9, %10, %2112, %2113, %2114, %1289, %2115, %1294, %1295, %1296, %1297, %1298) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1321 : NoneType = prim::Constant()
+  %1322 : NoneType = prim::Constant()
+  %1323 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1324 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1325 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1326 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1328 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.103 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.101, %11, %12, %1321, %1322, %1323, %1324, %1325, %1326) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2204 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.103, %1328) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2116 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2117 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2118 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1342 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2119 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1347 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1348 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1349 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1350 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1351 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.107 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2204, %13, %14, %2116, %2117, %2118, %1342, %2119, %1347, %1348, %1349, %1350, %1351) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1374 : NoneType = prim::Constant()
+  %1375 : NoneType = prim::Constant()
+  %1376 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1377 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1378 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1379 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1381 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.109 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.107, %15, %16, %1374, %1375, %1376, %1377, %1378, %1379) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2205 : Float(1, 320, 5, 20, 16, strides=[512000, 1600, 320, 16, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.109, %1381) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1383 : NoneType = prim::Constant()
+  %2120 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2121 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2122 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1396 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2123 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1401 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1402 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1403 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1404 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1405 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1406 : Float(1, 3, 5, 20, 16, strides=[4800, 1600, 320, 16, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2205, %112, %1383, %2120, %2121, %2122, %1396, %2123, %1401, %1402, %1403, %1404, %1405) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1407 : NoneType = prim::Constant()
+  %2124 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2125 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2126 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1420 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2127 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1425 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1426 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1427 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1428 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1429 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1430 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2205, %107, %1407, %2124, %2125, %2126, %1420, %2127, %1425, %1426, %1427, %1428, %1429) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1431 : Tensor[] = prim::ListConstruct(%1430, %2195)
+  %1432 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.113 : Float(1, 512, 10, 40, 32, strides=[6553600, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::cat(%1431, %1432) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2128 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2129 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2130 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1446 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2131 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1451 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1452 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1453 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1454 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1455 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.115 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.113, %17, %18, %2128, %2129, %2130, %1446, %2131, %1451, %1452, %1453, %1454, %1455) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1478 : NoneType = prim::Constant()
+  %1479 : NoneType = prim::Constant()
+  %1480 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1481 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1482 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1483 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1485 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.117 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.115, %19, %20, %1478, %1479, %1480, %1481, %1482, %1483) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2206 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.117, %1485) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2132 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2133 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2134 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1499 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2135 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1504 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1505 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1506 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1507 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1508 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.121 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2206, %21, %22, %2132, %2133, %2134, %1499, %2135, %1504, %1505, %1506, %1507, %1508) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1531 : NoneType = prim::Constant()
+  %1532 : NoneType = prim::Constant()
+  %1533 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1534 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1535 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1536 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1538 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.123 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.121, %23, %24, %1531, %1532, %1533, %1534, %1535, %1536) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2207 : Float(1, 256, 10, 40, 32, strides=[3276800, 12800, 1280, 32, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.123, %1538) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1540 : NoneType = prim::Constant()
+  %2136 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2137 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2138 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1553 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2139 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1558 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1559 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1560 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1561 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1562 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1563 : Float(1, 3, 10, 40, 32, strides=[38400, 12800, 1280, 32, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2207, %113, %1540, %2136, %2137, %2138, %1553, %2139, %1558, %1559, %1560, %1561, %1562) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1564 : NoneType = prim::Constant()
+  %2140 : int[] = prim::Constant[value=[2, 2, 2]]()
+  %2141 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2142 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1577 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2143 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1582 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1583 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1584 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1585 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1586 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1587 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2207, %108, %1564, %2140, %2141, %2142, %1577, %2143, %1582, %1583, %1584, %1585, %1586) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1588 : Tensor[] = prim::ListConstruct(%1587, %2193)
+  %1589 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.127 : Float(1, 256, 20, 80, 64, strides=[26214400, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::cat(%1588, %1589) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2144 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2145 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2146 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1603 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2147 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1608 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1609 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1610 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1611 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1612 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.129 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.127, %25, %26, %2144, %2145, %2146, %1603, %2147, %1608, %1609, %1610, %1611, %1612) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1635 : NoneType = prim::Constant()
+  %1636 : NoneType = prim::Constant()
+  %1637 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1638 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1639 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1640 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1642 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.131 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.129, %27, %28, %1635, %1636, %1637, %1638, %1639, %1640) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2208 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.131, %1642) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2148 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2149 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2150 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1656 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2151 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1661 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1662 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1663 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1664 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1665 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.135 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2208, %29, %30, %2148, %2149, %2150, %1656, %2151, %1661, %1662, %1663, %1664, %1665) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1688 : NoneType = prim::Constant()
+  %1689 : NoneType = prim::Constant()
+  %1690 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1691 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1692 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1693 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1695 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.137 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.135, %31, %32, %1688, %1689, %1690, %1691, %1692, %1693) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2209 : Float(1, 128, 20, 80, 64, strides=[13107200, 102400, 5120, 64, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.137, %1695) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1697 : NoneType = prim::Constant()
+  %2152 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2153 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2154 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1710 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2155 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1715 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1716 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1717 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1718 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1719 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1720 : Float(1, 3, 20, 80, 64, strides=[307200, 102400, 5120, 64, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2209, %114, %1697, %2152, %2153, %2154, %1710, %2155, %1715, %1716, %1717, %1718, %1719) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1721 : NoneType = prim::Constant()
+  %2156 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2157 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2158 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1734 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2159 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1739 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1740 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1741 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1742 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1743 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1744 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2209, %109, %1721, %2156, %2157, %2158, %1734, %2159, %1739, %1740, %1741, %1742, %1743) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1745 : Tensor[] = prim::ListConstruct(%1744, %2191)
+  %1746 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.141 : Float(1, 128, 20, 160, 128, strides=[52428800, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::cat(%1745, %1746) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2160 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2161 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2162 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1760 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2163 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1765 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1766 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1767 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1768 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1769 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.143 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.141, %33, %34, %2160, %2161, %2162, %1760, %2163, %1765, %1766, %1767, %1768, %1769) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1792 : NoneType = prim::Constant()
+  %1793 : NoneType = prim::Constant()
+  %1794 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1795 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1796 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1797 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1799 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.145 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.143, %35, %36, %1792, %1793, %1794, %1795, %1796, %1797) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2210 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.145, %1799) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2164 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2165 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2166 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1813 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2167 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1818 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1819 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1820 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1821 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1822 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.149 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2210, %37, %38, %2164, %2165, %2166, %1813, %2167, %1818, %1819, %1820, %1821, %1822) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1845 : NoneType = prim::Constant()
+  %1846 : NoneType = prim::Constant()
+  %1847 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1848 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1849 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1850 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1852 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.151 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.149, %39, %40, %1845, %1846, %1847, %1848, %1849, %1850) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2211 : Float(1, 64, 20, 160, 128, strides=[26214400, 409600, 20480, 128, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.151, %1852) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %1854 : NoneType = prim::Constant()
+  %2168 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2169 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2170 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1867 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2171 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1872 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1873 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1874 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1875 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1876 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1877 : Float(1, 3, 20, 160, 128, strides=[1228800, 409600, 20480, 128, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2211, %115, %1854, %2168, %2169, %2170, %1867, %2171, %1872, %1873, %1874, %1875, %1876) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1878 : NoneType = prim::Constant()
+  %2172 : int[] = prim::Constant[value=[1, 2, 2]]()
+  %2173 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2174 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1891 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %2175 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1896 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1897 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1898 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1899 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1900 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1901 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2211, %110, %1878, %2172, %2173, %2174, %1891, %2175, %1896, %1897, %1898, %1899, %1900) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:1102:0
+  %1902 : Tensor[] = prim::ListConstruct(%1901, %2189)
+  %1903 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %input.155 : Float(1, 64, 20, 320, 256, strides=[104857600, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::cat(%1902, %1903) # /home/shossainova/.local/lib/python3.9/site-packages/nnunet/network_architecture/generic_UNet.py:400:0
+  %2176 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2177 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2178 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1917 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2179 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1922 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1923 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1924 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1925 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1926 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.157 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%input.155, %41, %42, %2176, %2177, %2178, %1917, %2179, %1922, %1923, %1924, %1925, %1926) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1949 : NoneType = prim::Constant()
+  %1950 : NoneType = prim::Constant()
+  %1951 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1952 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1953 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1954 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %1956 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.159 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.157, %43, %44, %1949, %1950, %1951, %1952, %1953, %1954) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2212 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.159, %1956) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2180 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2181 : int[] = prim::Constant[value=[0, 1, 1]]()
+  %2182 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %1970 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2183 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %1975 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1976 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1977 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1978 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %1979 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %input.163 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2212, %45, %46, %2180, %2181, %2182, %1970, %2183, %1975, %1976, %1977, %1978, %1979) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2002 : NoneType = prim::Constant()
+  %2003 : NoneType = prim::Constant()
+  %2004 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2005 : float = prim::Constant[value=0.10000000000000001]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2006 : float = prim::Constant[value=1.0000000000000001e-05]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2007 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2009 : float = prim::Constant[value=0.01]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %input.165 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::instance_norm(%input.163, %47, %48, %2002, %2003, %2004, %2005, %2006, %2007) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:2483:0
+  %2213 : Float(1, 32, 20, 320, 256, strides=[52428800, 1638400, 81920, 256, 1], requires_grad=1, device=cuda:0) = aten::leaky_relu(%input.165, %2009) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/functional.py:1631:0
+  %2011 : NoneType = prim::Constant()
+  %2184 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2185 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2186 : int[] = prim::Constant[value=[1, 1, 1]]()
+  %2024 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2187 : int[] = prim::Constant[value=[0, 0, 0]]()
+  %2029 : int = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2030 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2031 : bool = prim::Constant[value=0]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2032 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2033 : bool = prim::Constant[value=1]() # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  %2034 : Float(1, 3, 20, 320, 256, strides=[4915200, 1638400, 81920, 256, 1], requires_grad=0, device=cuda:0) = aten::_convolution(%2213, %116, %2011, %2184, %2185, %2186, %2024, %2187, %2029, %2030, %2031, %2032, %2033) # /home/shossainova/.local/lib/python3.9/site-packages/torch/nn/modules/conv.py:602:0
+  return (%2034, %1877, %1720, %1563, %1406, %1249)
+, None, False 
+2022-10-21 17:41:58.481146: 
+printing the network instead:
+ 
+2022-10-21 17:41:58.481316: Generic_UNet(
+  (conv_blocks_localization): ModuleList(
+    (0): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (1): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (2): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(512, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (3): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (4): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (5): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(32, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (conv_blocks_context): ModuleList(
+    (0): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(1, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 32, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (1): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 64, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 64, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (2): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (3): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (4): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (5): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (6): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 2, 2), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (td): ModuleList()
+  (tu): ModuleList(
+    (0): ConvTranspose3d(320, 320, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (1): ConvTranspose3d(320, 320, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (2): ConvTranspose3d(320, 256, kernel_size=(2, 2, 2), stride=(2, 2, 2), bias=False)
+    (3): ConvTranspose3d(256, 128, kernel_size=(2, 2, 2), stride=(2, 2, 2), bias=False)
+    (4): ConvTranspose3d(128, 64, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+    (5): ConvTranspose3d(64, 32, kernel_size=(1, 2, 2), stride=(1, 2, 2), bias=False)
+  )
+  (seg_outputs): ModuleList(
+    (0): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (1): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (2): Conv3d(256, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (3): Conv3d(128, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (4): Conv3d(64, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (5): Conv3d(32, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+  )
+) 
+2022-10-21 17:41:58.510278: 
+ 
+2022-10-21 17:41:58.619888: 
+epoch:  100 

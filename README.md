@@ -1,11 +1,11 @@
 # Deep Learning for Prostate MRI Biomarkers
 
-Preprint: 
+**Preprint: **
 Deep Learning Identified Extra-Prostatic Extension and Seminal Vesicle Invasion as an MRI Biomarker for Prostate Cancer Outcomes
 Sajid Hossain, Saeed Hossain, Durga Sritharan, Daniel Fu, Aishwarya Nene, Jahid Hossain, Saahil Chadha, Issac Kim, MingDe Lin, Mariam Aboian, Sanjay Aneja
 medRxiv 2024.12.31.24319822; doi: https://doi.org/10.1101/2024.12.31.24319822
 
-(https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1)
+https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1
 
 In this project, we use Deep Learning (DL) on Prostate Cancer (PCA) Magnetic Resonance Imaging (MRI) to develop and validate two prognostic biomarkers that independently predict Biochemical Recurrence (BCR).
 
@@ -226,4 +226,7 @@ python train.py
 ```
 
 ## References:
-1. [Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.](https://www.nature.com/articles/s41592-020-01008-z)
+Hossain, S., Hossain, S., Sritharan, D., Fu, D., Nene, A., Hossain, J., Chadha, S., Kim, I., Lin, M., Aboian, M. and Aneja, S., 2025. Deep Learning Identified Extra-Prostatic Extension and Seminal Vesicle Invasion as an MRI Biomarker for Prostate Cancer Outcomes. medRxiv, pp.2024-12.(https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1)
+
+[Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.](https://www.nature.com/articles/s41592-020-01008-z)
+ 

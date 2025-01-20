@@ -1,5 +1,12 @@
 # Deep Learning for Prostate MRI Biomarkers
 
+Preprint: 
+Deep Learning Identified Extra-Prostatic Extension and Seminal Vesicle Invasion as an MRI Biomarker for Prostate Cancer Outcomes
+Sajid Hossain, Saeed Hossain, Durga Sritharan, Daniel Fu, Aishwarya Nene, Jahid Hossain, Saahil Chadha, Issac Kim, MingDe Lin, Mariam Aboian, Sanjay Aneja
+medRxiv 2024.12.31.24319822; doi: https://doi.org/10.1101/2024.12.31.24319822
+
+(https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1)
+
 In this project, we use Deep Learning (DL) on Prostate Cancer (PCA) Magnetic Resonance Imaging (MRI) to develop and validate two prognostic biomarkers that independently predict Biochemical Recurrence (BCR).
 
 <i><b>TL;DR:</b> We hypothesized that features derived from diagnostic imaging of Prostate Cancer are associated with outcomes and can inform clincal treatment decisions, particulary useful in the growing and dynamic landscape of PCa therapies. We trained two deep convolutional neural networks, EPE-Net and SVI-Net, respectively on radiographic evidence of Extraprostatic Extension (EPE) and Seminal Vesicle Invasion (SVI), two high-risk pathological phenotypes of PCa. We demonstrate that these models perform well in identifying radiographic and pathologic EPE and SVI, respectively, and demonstrate the utility of their outputs in stratifying patients' risk for BCR using survival analysis. Finally, we develop a simple points based methodology to integrate these biomarkers into existing clinical guidelines, NCCN and CAPRA, and demonstrate improved risk stratification from baseline.</i>

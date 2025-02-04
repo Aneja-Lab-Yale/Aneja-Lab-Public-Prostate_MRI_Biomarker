@@ -15,16 +15,35 @@ In this project, we use Deep Learning (DL) on Prostate Cancer (PCA) Magnetic Res
 ## Contents:
 Use these links to easily navigate through this readme:
 
-1. [Installation](#getting-started)
-2. [File Structure](#file-structure)
-3. [Public Data](#data)
-4. [Preprocessing](#preprocessing-images)
-5. [Segmentations](#segmentations)
-6. [Pretrained Models](#pretrained-models)
-7. [SVI-Net](#svi-net)
-8. [EPE-Net](#epe-net)
-9. [Training Models](#training-models)
-10. [References](#references)
+1. [System Requirements](#system-requirements)
+2. [Installation](#getting-started)
+3. [File Structure](#file-structure)
+4. [Public Data](#data)
+5. [Preprocessing](#preprocessing-images)
+6. [Segmentations](#segmentations)
+7. [Pretrained Demos](#pretrained-models)
+8. [SVI-Net](#svi-net)
+9. [EPE-Net](#epe-net)
+10. [Training Models](#training-models)
+11. [References](#references)
+
+## System Requirements:
+This software uses python v3.9 and all associated packages are specified in the requirements.txt file.
+
+Operating Systems Tested:
+- Windows 11 v10.0.22631
+- Ubuntu 18.04.6 LTS
+
+Hardware Specifications:
+- CPU: Intel i7-9750H (12) @ 2.592GHz
+- RAM: 16GB
+- GPU: Nvidia GeForce GTX 1650 (Driver Version 32.0.15.5599)
+
+Software Specifications:
+- CUDA Version 12.5
+- Python v3.9
+
+ALthough this software runs best with an Nvidia GPU and associated CUDA drivers, it is possible to run on CPU with longer runtimes.
 
 ## Installation:
 ### Getting Started:
@@ -37,11 +56,13 @@ git clone https://github.com/Aneja-Lab-Yale/Aneja-Lab-Public-Prostate_MRI_Biomar
 2) Navigate to the cloned repository and run the following commands to create the appropriate environment and download packages as specified:
 
 ```bash
-conda create -n prostate_env python=3.7
+conda create -n prostate_env python=3.9
 conda activate prostate_env
 # source activate prostate_env # use this command if above command does not work
 pip install -r requirements.txt
 ```
+
+Complete installation of the environment will take <10 min on a standard desktop.
 
 ### File Structure:
 The cloned repository will have the following file structure. Descriptions of major folders and files are below:
@@ -72,7 +93,8 @@ The cloned repository will have the following file structure. Descriptions of ma
     ├── SVI_Net_final.pt            # SVI-Net model saved weights
     ├── SVI_Net_final.py            # NON-EXECUTABLE/CALLABLE: final SVI-Net model class in Pytorch
     ├── SVI_Net_final_hyper.csv     # SVI-Net model saved hyperparameters
-    
+
+├── output                 # contains sample EPE-Net and SVI-Net outputs
 ├── nnUNet                 # contains pretrained nnUNet models for segmenting prostates and seminal vesicles
 ├── preprocess             # contains nonexecutable python code and functions called by mri_preprocessing.py
 ├── registration           # contains more nonexecutable python code and functions called by mri_processing.py
@@ -171,7 +193,11 @@ As an example the <b>*predict.py*</b> executable is pre-configured to run the SV
 python predict.py
 ```
 
-The prediction results, including an ROC-AUC curve and a .csv with predicted biomarkers for each image, will be generated in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory.
+The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
+
+![Example SVI-Net Output](./output/SVI_Net_output_ex.png)
+
+SVI-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes. 
 
 ### EPE-Net:
 Running pretrained EPE-Net on the PROSTATE-DIAGNOSIS toy data set requires some adjustments in the <b>*predict.py*</b> file. These adjusments are commented in the source code and are shown below:
@@ -217,7 +243,11 @@ After these changes are made, run the following command in your terminal:
 python predict.py
 ```
 
-The prediction results, including an ROC-AUC curve and a .csv with predicted labels, will be generated in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory.
+The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
+
+![Example EPE-Net Output](./output/EPE_Net_output_ex.png)
+
+EPE-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes.
 
 ## Training Models:
 Training a model requires running the executable <b>*train.py*</b> file. The source code of this file can be modified to run these models on your data and <b>PROSTATE-DIAGNOSIS</b> dataset can be used as a toy dataset. Run the following command in your terminal:

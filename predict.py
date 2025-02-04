@@ -45,17 +45,17 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Set project root directory
 # Change this path to your cloned github directory
-project_root = '/home/shossain/Aneja-Lab-Public-Prostate-MRI-Biomarkers'
-
+#project_root = '/home/shossain/Aneja-Lab-Public-Prostate-MRI-Biomarkers'
+project_root = 'C:\\Users\\shasa\\Desktop\\Aneja-Lab-Public-Prostate-MRI-Biomarkers'
 # Change this path to the directory with the arrays of images in reference to your project directory
-data_directory = 'data/prostate_dx/arrays/seminal_vesicles'
-
+#data_directory = 'data/prostate_dx/arrays/seminal_vesicles'
+data_directory = 'data\\prostate_dx\\arrays\\prostates'
 # Use the following line if running EPE-Net and comment out the previous line:
 #data_directory = 'data/prostate_dx/arrays/prostates'
 
 # select the name of the model that you want to run the inference with
 # change to "SVI_Net_final" to "EPE_Net_final" if you want to run EPE-Net
-model_name = 'SVI_Net_final'
+model_name = 'EPE_Net_final'
 
 # activation functions and loss criterion
 act = Sigmoid()
@@ -66,12 +66,12 @@ if __name__ == "__main__":
 
     # opens the stored dictionary with svi labels
     # change to "tcia_svi_labels.pkl" to "tcia_epe_labels.pkl" if running EPE-Net
-    with open(os.path.join(project_root, data_directory, 'tcia_svi_labels.pkl'), 'rb') as handle:
+    with open(os.path.join(project_root, data_directory, 'tcia_epe_labels.pkl'), 'rb') as handle:
         labels = pickle.load(handle)
 
     # opens the stored dictionary with svi partition of patients, they are all used for testing
     # change to "tcia_svi_partition.pkl" to "tcia_epe_paritition.pkl" if running EPE-Net
-    with open(os.path.join(project_root, data_directory, 'tcia_svi_partition.pkl'), 'rb') as handle:
+    with open(os.path.join(project_root, data_directory, 'tcia_epe_partition.pkl'), 'rb') as handle:
         partition_patients = pickle.load(handle)
 
     test_normal = [i for i in partition_patients['eval']] # creates separate list of patients if they are designated as testing 
@@ -112,6 +112,7 @@ if __name__ == "__main__":
 
             # store loss and iteration
 
+        t_output = sigmoid_acc(t_output)
         t_output = t_output.to('cpu')
         t_preds = t_preds.to('cpu')
 
@@ -122,7 +123,7 @@ if __name__ == "__main__":
         t_preds = [i[0] for i in t_preds]
 
         full_list.insert(0, 'Image_ID')
-        t_output.insert(0, 'Logits Pred')
+        t_preds.insert(0, 'Logits Pred')
         t_output.insert(0, 'Binary Pred')
 
         results_output = list(zip(full_list, t_output, t_preds))

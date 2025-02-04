@@ -38,8 +38,6 @@ from sklearn.metrics import roc_auc_score
 import pandas as pd
 import random
 from random import shuffle
-from libauc.losses import AUCMLoss
-from libauc.optimizers import PESG
 from torchinfo import summary
 
 #---------------------------------------Device Configuration--------------------------------------------------------------

@@ -48,7 +48,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 project_root = '/home/shossain/Aneja-Lab-Public-Prostate-MRI-Biomarkers'
 
 # Change this path to the directory with the arrays of images in reference to your project directory
-data_directory = 'data/prostate_dx/arrays/seminal_vesicles' 
+data_directory = 'data/prostate_dx/arrays/seminal_vesicles'
 
 # Use the following line if running EPE-Net and comment out the previous line:
 #data_directory = 'data/prostate_dx/arrays/prostates'
@@ -96,77 +96,39 @@ if __name__ == "__main__":
         t_output = torch.empty(0)
         t_output = t_output.to(device)
         
-        t_labels = torch.empty(0)
-        t_labels = t_labels.to(device)
-        
         t_preds = torch.empty(0)
         t_preds = t_preds.to(device)
 
         # Iterate through test dataset
         for images, labels in test_loader:
             images = images.to(device)
-            labels = labels.float()
-            labels = labels.to(device)
 
             # Forward propagation
             outputs = model(images)
             preds = act(outputs) # for AUC and F1
 
-
-            # Calculate loss and accuracy
-            criterion.cuda()
-            loss = criterion(outputs, labels.unsqueeze(1))
-            #loss = criterion(preds, labels.unsqueeze(1)) #for AUC and f1
-            acc = binary_acc(outputs, labels.unsqueeze(1))
-
-            t_loss += loss.item()
-            t_acc += acc.item()
             t_output = torch.cat((t_output, outputs))
-            t_labels = torch.cat((t_labels, labels.unsqueeze(1)))
             t_preds = torch.cat((t_preds, preds))
 
             # store loss and iteration
 
-        # calculates performance metrics based on predicted values for epe/svi and actual epe/svi
-        test_loss = (t_loss / len(test_loader))
-        test_accuracy = (t_acc / len(test_loader))
-        t_output = sigmoid_acc(t_output)
         t_output = t_output.to('cpu')
-        t_labels = t_labels.to('cpu')
         t_preds = t_preds.to('cpu')
+
         t_output = t_output.detach().numpy()
-        t_labels = t_labels.detach().numpy()
         t_preds = t_preds.detach().numpy()
-        test_auc = (roc_auc(t_output, t_labels))
-        test_cross_matrix = cross_matrix(t_output, t_labels)
-        test_tp = (test_cross_matrix[0])
-        test_fp = (test_cross_matrix[1])
-        test_tn = (test_cross_matrix[2])
-        test_fn = (test_cross_matrix[3])
-        test_sn = (test_cross_matrix[0]/(test_cross_matrix[0] + test_cross_matrix[3]))
-        test_sp = (test_cross_matrix[2]/(test_cross_matrix[2] + test_cross_matrix[1]))
-        test_f1 = (f1_score(test_tp, test_fp, test_fn))
 
-        fpr, tpr, _ = metrics.roc_curve(t_labels, t_preds)
-
-        # saves a plot of the roc-auc curve in the experiments folder
-        plt.plot(fpr, tpr, '--k', label='AUC = '+f'{test_auc:.3f}')
-        plt.xlabel('False Positive Rate')
-        plt.ylabel('True Positive Rate')
-        plt.legend(loc=4)
-        plt.savefig(os.path.join(project_root, 'experiments', model_name + '_full_roc_auc_curve.png'))
-
-        # prints to terminal the performance metrics of the inference
-        print(f'Test Loss: {t_loss / len(test_loader):.5f} | Test Acc: {t_acc / len(test_loader):.3f}\nTest AUC: {test_auc:.3f} | Test Sn: {test_sn:.3f} | Test Sp: {test_sp:.3f} \n')
-
-        t_labels = [int(i[0]) for i in t_labels]
         t_output = [int(i[0]) for i in t_output]
         t_preds = [i[0] for i in t_preds]
 
-        results_output = list(zip(full, t_labels, t_output, t_preds))
+        full_list.insert(0, 'Image_ID')
+        t_output.insert(0, 'Logits Pred')
+        t_output.insert(0, 'Binary Pred')
+
+        results_output = list(zip(full_list, t_output, t_preds))
 
         # saves a csv of results to the experiments folder
-        with open(os.path.join(project_root, 'experiments', model_name + '_full_val_results.csv'), 'w+', newline='') as f:
+        with open(os.path.join(project_root, 'output', model_name + '_results.csv'), 'w+', newline='') as f:
             write = csv.writer(f)
             write.writerows(results_output)
 

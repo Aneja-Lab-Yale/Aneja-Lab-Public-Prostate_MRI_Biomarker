@@ -31,17 +31,23 @@ Use these links to easily navigate through this readme:
 This software uses python v3.9 and all associated packages are specified in the requirements.txt file.
 
 Operating Systems Tested:
+```
 - Windows 11 v10.0.22631
 - Ubuntu 18.04.6 LTS
+```
 
 Hardware Specifications:
+```
 - CPU: Intel i7-9750H (12) @ 2.592GHz
 - RAM: 16GB
 - GPU: Nvidia GeForce GTX 1650 (Driver Version 32.0.15.5599)
+```
 
 Software Specifications:
+```
 - CUDA Version 12.5
 - Python v3.9
+```
 
 Model Weights:
 - Available via Box: (https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model)
@@ -90,10 +96,10 @@ The cloned repository will have the following file structure. Descriptions of ma
             ├── seminal_vesicles        # numpy arrays for seminal vesicles
 
 ├── models                 # contains final pretrained EPE-Net and SVI-Net models for download and use
-    ├── EPE_Net_final.pt            # EPE-Net model saved weights
+    ├── EPE_Net_final.pt            # EPE-Net model saved weights (available in the Box link)
     ├── EPE_Net_final.py            # NON-EXECUTABLE/CALLABLE: final EPE-Net model class in Pytorch
     ├── EPE_Net_final_hyper.csv     # EPE-Net model saved hyperparameters
-    ├── SVI_Net_final.pt            # SVI-Net model saved weights
+    ├── SVI_Net_final.pt            # SVI-Net model saved weights (available in the Box link)
     ├── SVI_Net_final.py            # NON-EXECUTABLE/CALLABLE: final SVI-Net model class in Pytorch
     ├── SVI_Net_final_hyper.csv     # SVI-Net model saved hyperparameters
 
@@ -114,6 +120,8 @@ Images and clinical data used to train and test our pretrained EPE-Net and SVI-N
 The [PROSTATE-DIAGNOSIS](https://www.cancerimagingarchive.net/collection/prostate-diagnosis/) dataset--including MRI images, clinical metadata, and prostate and seminal vesicle segmentations--are publically available through [The Cancer Imaging Archive (TCIA)](https://www.cancerimagingarchive.net). 
 
 The images from the **PROSTATE-DIAGNOSIS** dataset are included in the <b>*./data/prostate_dx/raw*</b> directory in this public repository to use as a toy dataset. This dataset is also used as a low resolution external validation set in our manuscript. 
+
+Pretrained SVI-Net and EPE-Net model with weights are too big to include in this GitHub Repo. Instead, they are available for download at the Box link:  https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model. Unzip this file and place them into the models folder of our cloned repo.
 
 ## Preprocessing Images:
 Our MRI image preprocessing pipeline includes coordinate standardization to LAS system, N4 bias field correction, histogram normalisation, resampling to standard voxel size, [nnUNet segmentation](#segmentations), masking, zero-padding, and data augmentation. 
@@ -187,6 +195,8 @@ nnUNet_predict -i ./data/prostate_dx/resampled -o ./data/prostate_dx/segmentatio
 ```
 
 ## Pretrained Models:
+Pretrained SVI-Net and EPE-Net model with weights are too big to include in this GitHub Repo. Instead, they are available for download at the Box link:  https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model. Unzip this file and place them into the models folder of our cloned repo.
+
 Running an inference with our pretrained SVI-Net or EPE-Net requires running the executable <b>*predict.py*</b> file. The source code of this file can be modified to run these models on your data and <b>PROSTATE-DIAGNOSIS</b> dataset can be used as a toy dataset; examples are included below:
 
 ### SVI-Net:
@@ -260,7 +270,7 @@ python train.py
 ```
 
 ## References:
-Hossain, S., Hossain, S., Sritharan, D., Fu, D., Nene, A., Hossain, J., Chadha, S., Kim, I., Lin, M., Aboian, M. and Aneja, S., 2025. Deep Learning Identified Extra-Prostatic Extension and Seminal Vesicle Invasion as an MRI Biomarker for Prostate Cancer Outcomes. medRxiv, pp.2024-12.(https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1)
+[Hossain, S., Hossain, S., Sritharan, D., Fu, D., Nene, A., Hossain, J., Chadha, S., Kim, I., Lin, M., Aboian, M. and Aneja, S., 2025. Deep Learning Identified Extra-Prostatic Extension and Seminal Vesicle Invasion as an MRI Biomarker for Prostate Cancer Outcomes. medRxiv, pp.2024-12.](https://www.medrxiv.org/content/10.1101/2024.12.31.24319822v1)
 
 [Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.](https://www.nature.com/articles/s41592-020-01008-z)
  

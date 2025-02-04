@@ -44,8 +44,7 @@ Software Specifications:
 - Python v3.9
 
 Model Weights:
-- Available via Box:[
-](https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model)
+- Available via Box: (https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model)
 
 ALthough this software runs best with an Nvidia GPU and associated CUDA drivers, it is possible to run on CPU with longer runtimes.
 

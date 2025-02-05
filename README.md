@@ -28,7 +28,6 @@ Use these links to easily navigate through this readme:
 11. [References](#references)
 
 ## System Requirements:
-This software uses python v3.9 and all associated packages are specified in the requirements.txt file.
 
 Operating Systems Tested:
 ```
@@ -47,12 +46,15 @@ Software Specifications:
 ```
 - CUDA Version 12.5
 - Python v3.9
+- Other required software packages and version specified in the requirements.txt file
 ```
 
 Model Weights:
+```
 - Available via Box: (https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model)
+```
 
-ALthough this software runs best with an Nvidia GPU and associated CUDA drivers, it is possible to run on CPU with longer runtimes.
+Although this software runs best with an Nvidia GPU and associated CUDA drivers, it is possible to run on CPU with longer runtimes.
 
 ## Installation:
 ### Getting Started:

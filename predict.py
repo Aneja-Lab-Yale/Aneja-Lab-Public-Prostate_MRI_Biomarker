@@ -46,10 +46,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # Set project root directory
 # Change this path to your cloned github directory
 #project_root = '/home/shossain/Aneja-Lab-Public-Prostate-MRI-Biomarkers'
-project_root = 'C:\\Users\\shasa\\Desktop\\Aneja-Lab-Public-Prostate-MRI-Biomarkers'
+project_root = '/mnt/c/Users/shasa/Desktop/Aneja-Lab-Public-Prostate-MRI-Biomarkers'
 # Change this path to the directory with the arrays of images in reference to your project directory
 #data_directory = 'data/prostate_dx/arrays/seminal_vesicles'
-data_directory = 'data\\prostate_dx\\arrays\\prostates'
+data_directory = 'data/prostate_dx/arrays/prostates'
 # Use the following line if running EPE-Net and comment out the previous line:
 #data_directory = 'data/prostate_dx/arrays/prostates'
 

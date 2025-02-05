@@ -19,11 +19,11 @@ Use these links to easily navigate through this readme:
 2. [Installation](#getting-started)
 3. [File Structure](#file-structure)
 4. [Public Data](#data)
-5. [Preprocessing](#preprocessing-images)
-6. [Segmentations](#segmentations)
-7. [Pretrained Demos](#pretrained-models)
-8. [SVI-Net](#svi-net)
-9. [EPE-Net](#epe-net)
+5. [Pretrained Demos](#pretrained-models)
+6. [SVI-Net](#svi-net)
+7. [EPE-Net](#epe-net)
+8. [Preprocessing](#preprocessing-images)
+9. [Segmentations](#segmentations)
 10. [Training Models](#training-models)
 11. [References](#references)
 
@@ -127,6 +127,72 @@ The images from the **PROSTATE-DIAGNOSIS** dataset are included in the <b>*./dat
 
 Pretrained SVI-Net and EPE-Net model with weights are too big to include in this GitHub Repo. Instead, they are available for download at the Box link:  https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model. Unzip this file and place them into the models folder of our cloned repo.
 
+## Pretrained Models:
+Running an inference with our pretrained SVI-Net or EPE-Net requires running the executable <b>*predict.py*</b> file. The source code of this file can be modified to run these models on your data and <b>PROSTATE-DIAGNOSIS</b> dataset can be used as a toy dataset; examples are included below:
+
+### SVI-Net:
+As an example the <b>*predict.py*</b> executable is pre-configured to run the SVI-Net model on the <b>PROSTATE-DIAGNOSIS</b> toy data set. Run the following command in your terminal:
+
+```bash
+python predict.py
+```
+
+The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
+
+![Example SVI-Net Output](./output/SVI_Net_output_ex.png)
+
+SVI-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes. 
+
+### EPE-Net:
+Running pretrained EPE-Net on the PROSTATE-DIAGNOSIS toy data set requires some adjustments in the <b>*predict.py*</b> file. These adjusments are commented in the source code and are shown below:
+
+```python
+# lines 34 through 36:
+from models.SVI_Net_final import BoxNet, binary_acc, sigmoid_acc, cross_matrix, roc_auc, f1_score
+# use the following line if running EPE-Net and comment out the previous line:
+#from models.EPE_Net_final import BoxNet, binary_acc, sigmoid_acc, cross_matrix, roc_auc, f1_score
+```
+
+```python
+# lines 50 through 54:
+# Change this path to the directory with the arrays of images in reference to your project directory
+data_directory = 'data/prostate_dx/arrays/seminal_vesicles' 
+
+# Use the following line if running EPE-Net and comment out the previous line:
+#data_directory = 'data/prostate_dx/arrays/prostates'
+```
+
+```python
+# lines 56 through 58
+# select the name of the model that you want to run the inference with
+# change to "SVI_Net_final" to "EPE_Net_final" if you want to run EPE-Net
+model_name = 'SVI_Net_final'
+```
+
+```python
+# lines 67 through 75
+    # opens the stored dictionary with svi labels
+    # change to "tcia_svi_labels.pkl" to "tcia_epe_labels.pkl" if running EPE-Net
+    with open(os.path.join(project_root, data_directory, 'tcia_svi_labels.pkl'), 'rb') as handle:
+        labels = pickle.load(handle)
+
+    # opens the stored dictionary with svi partition of patients, they are all used for testing
+    # change to "tcia_svi_partition.pkl" to "tcia_epe_paritition.pkl" if running EPE-Net
+    with open(os.path.join(project_root, data_directory, 'tcia_svi_partition.pkl'), 'rb') as handle:
+        partition_patients = pickle.load(handle)
+```
+After these changes are made, run the following command in your terminal:
+
+```bash
+python predict.py
+```
+
+The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
+
+![Example EPE-Net Output](./output/EPE_Net_output_ex.png)
+
+EPE-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes.
+
 ## Preprocessing Images:
 Our MRI image preprocessing pipeline includes coordinate standardization to LAS system, N4 bias field correction, histogram normalisation, resampling to standard voxel size, [nnUNet segmentation](#segmentations), masking, zero-padding, and data augmentation. 
 
@@ -197,74 +263,6 @@ Example to generate prostate segmentations for a batch of PROSTATE-DIAGNOSIS ima
 ```bash
 nnUNet_predict -i ./data/prostate_dx/resampled -o ./data/prostate_dx/segmentations/seminal_vesicles -t 501 -m 3d_fullres --save_npz
 ```
-
-## Pretrained Models:
-Pretrained SVI-Net and EPE-Net model with weights are too big to include in this GitHub Repo. Instead, they are available for download at the Box link:  https://yalesecure.box.com/v/Aneja-Lab-Prostate-Model. Unzip this file and place them into the models folder of our cloned repo.
-
-Running an inference with our pretrained SVI-Net or EPE-Net requires running the executable <b>*predict.py*</b> file. The source code of this file can be modified to run these models on your data and <b>PROSTATE-DIAGNOSIS</b> dataset can be used as a toy dataset; examples are included below:
-
-### SVI-Net:
-As an example the <b>*predict.py*</b> executable is pre-configured to run the SVI-Net model on the <b>PROSTATE-DIAGNOSIS</b> toy data set. Run the following command in your terminal:
-
-```bash
-python predict.py
-```
-
-The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
-
-![Example SVI-Net Output](./output/SVI_Net_output_ex.png)
-
-SVI-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes. 
-
-### EPE-Net:
-Running pretrained EPE-Net on the PROSTATE-DIAGNOSIS toy data set requires some adjustments in the <b>*predict.py*</b> file. These adjusments are commented in the source code and are shown below:
-
-```python
-# lines 34 through 36:
-from models.SVI_Net_final import BoxNet, binary_acc, sigmoid_acc, cross_matrix, roc_auc, f1_score
-# use the following line if running EPE-Net and comment out the previous line:
-#from models.EPE_Net_final import BoxNet, binary_acc, sigmoid_acc, cross_matrix, roc_auc, f1_score
-```
-
-```python
-# lines 50 through 54:
-# Change this path to the directory with the arrays of images in reference to your project directory
-data_directory = 'data/prostate_dx/arrays/seminal_vesicles' 
-
-# Use the following line if running EPE-Net and comment out the previous line:
-#data_directory = 'data/prostate_dx/arrays/prostates'
-```
-
-```python
-# lines 56 through 58
-# select the name of the model that you want to run the inference with
-# change to "SVI_Net_final" to "EPE_Net_final" if you want to run EPE-Net
-model_name = 'SVI_Net_final'
-```
-
-```python
-# lines 67 through 75
-    # opens the stored dictionary with svi labels
-    # change to "tcia_svi_labels.pkl" to "tcia_epe_labels.pkl" if running EPE-Net
-    with open(os.path.join(project_root, data_directory, 'tcia_svi_labels.pkl'), 'rb') as handle:
-        labels = pickle.load(handle)
-
-    # opens the stored dictionary with svi partition of patients, they are all used for testing
-    # change to "tcia_svi_partition.pkl" to "tcia_epe_paritition.pkl" if running EPE-Net
-    with open(os.path.join(project_root, data_directory, 'tcia_svi_partition.pkl'), 'rb') as handle:
-        partition_patients = pickle.load(handle)
-```
-After these changes are made, run the following command in your terminal:
-
-```bash
-python predict.py
-```
-
-The predicted SVI logits probabilities and binary predictions will be output as a .csv file in the <b>*Aneja-Lab-Public-Prostate-MRI-Biomakers/experiments/*</b> directory as show below:
-
-![Example EPE-Net Output](./output/EPE_Net_output_ex.png)
-
-EPE-Net runtime will vary with number of images analyzed and system specifications. On a normal desktop the expected runtime on the Prostate-Diagnosis dataset of ~40 images is <10 minutes.
 
 ## Training Models:
 Training a model requires running the executable <b>*train.py*</b> file. The source code of this file can be modified to run these models on your data and <b>PROSTATE-DIAGNOSIS</b> dataset can be used as a toy dataset. Run the following command in your terminal:

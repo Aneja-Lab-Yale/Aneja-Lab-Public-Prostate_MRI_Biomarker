@@ -19,7 +19,7 @@ networkx==2.6.3
 nibabel==4.0.1
 numpy==1.21.6
 packaging==21.3
-pandas==1.1.5
+pandas==2.0.3
 pathos==0.2.9
 Pillow==9.2.0
 pox==0.3.1

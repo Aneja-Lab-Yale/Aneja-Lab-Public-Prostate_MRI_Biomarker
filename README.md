@@ -32,12 +32,14 @@ Use these links to easily navigate through this readme:
 Operating Systems Tested:
 ```
 - Windows 11 v10.0.22631
-- Ubuntu 18.04.6 LTS
+- Ubuntu 18.04.6 LTS (Bionic Beaver)
+- macOS Ventura v13.3.1a
 ```
 
 Hardware Specifications:
 ```
 - CPU: Intel i7-9750H (12) @ 2.592GHz
+- CPU: Apple M1
 - RAM: 16GB
 - GPU: Nvidia GeForce GTX 1650 (Driver Version 32.0.15.5599)
 ```

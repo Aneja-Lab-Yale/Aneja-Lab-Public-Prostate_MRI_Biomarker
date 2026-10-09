@@ -12,6 +12,17 @@ In this project, we use Deep Learning (DL) on Prostate Cancer (PCA) Magnetic Res
 
 <i><b>TL;DR:</b> We hypothesized that features derived from diagnostic imaging of Prostate Cancer are associated with outcomes and can inform clincal treatment decisions, particulary useful in the growing and dynamic landscape of PCa therapies. We trained two deep convolutional neural networks, EPE-Net and SVI-Net, respectively on radiographic evidence of Extraprostatic Extension (EPE) and Seminal Vesicle Invasion (SVI), two high-risk pathological phenotypes of PCa. We demonstrate that these models perform well in identifying radiographic and pathologic EPE and SVI, respectively, and demonstrate the utility of their outputs in stratifying patients' risk for BCR using survival analysis. Finally, we develop a simple points based methodology to integrate these biomarkers into existing clinical guidelines, NCCN and CAPRA, and demonstrate improved risk stratification from baseline.</i>
 
+## 3D U-Net pipeline (this branch only)
+
+`main` is still the nnU-Net path below. On branch **`3D-UNet-pipeline`**, a separate drawer lives in [`unet_pipeline/`](unet_pipeline/): 3D U-Net → 6×6×6 cook → EPE-Net / SVI-Net. Weights are not in git. See [`unet_pipeline/README.md`](unet_pipeline/README.md).
+
+```bash
+git clone https://github.com/Aneja-Lab-Yale/Aneja-Lab-Public-Prostate_MRI_Biomarker.git
+cd Aneja-Lab-Public-Prostate_MRI_Biomarker
+git checkout 3D-UNet-pipeline
+cd unet_pipeline
+```
+
 ## Contents:
 Use these links to easily navigate through this readme:
 

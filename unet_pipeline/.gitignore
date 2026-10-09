@@ -1,0 +1,14 @@
+*.pt
+*.pth
+*.npy
+*.npz
+*.nii
+*.nii.gz
+__pycache__/
+*.pyc
+.DS_Store
+output/
+runs/
+landmarks/
+.venv/
+env/
